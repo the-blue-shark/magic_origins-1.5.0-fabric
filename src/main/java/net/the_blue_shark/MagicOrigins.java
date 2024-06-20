@@ -11,7 +11,6 @@ public class MagicOrigins implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
 		LOGGER.info("Hello world!");
 	}
 }

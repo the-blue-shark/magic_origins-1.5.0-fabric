@@ -14,7 +14,7 @@
 		"homepage": "",
 		"sources": ""
 	},
-	"license": "CC0-1.0",
+	"license": "ARR",
 	"icon": "assets/magic_origins/icon.png",
 	"environment": "*",
 	"entrypoints": {
