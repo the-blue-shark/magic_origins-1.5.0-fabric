@@ -1,0 +1,16 @@
+{
+    "name": "Mimic",
+    "description": "A mythical creature that can disguise itself.",
+    "powers": [
+        "magic_origins:mimic/toggle",
+        "magic_origins:mimic/toggle2",
+        "magic_origins:mimic/display",
+        "origins:nine_lives",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:trapped_chest",
+        "amount": 1
+    },
+    "impact": 1
+}

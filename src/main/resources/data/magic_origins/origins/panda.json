@@ -1,0 +1,15 @@
+{
+    "name": "Panda",
+    "description": "You are resurected as an animal, the panda!",
+    "powers": [
+        "magic_origins:panda/bamboo_new",
+        "magic_origins:panda/panda_shit",
+        "origins:vegetarian",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:panda_spawn_egg",
+        "amount": 1
+    },
+    "impact": 1
+}

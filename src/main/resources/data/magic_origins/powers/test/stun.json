@@ -1,0 +1,101 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "toggle": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "key": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "cooldown": 1200,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:daytime",
+                "inverted": false
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_toggle"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "effect give @e[distance=0.1..5] weakness 5 9 true"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "effect give @e[distance=0.1..5] blindness 5 9 true"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:toggle",
+                            "power": "*:*_toggle"
+                        },
+                        "ticks": 200
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_toggle"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "effect give @e[distance=0.1..5] weakness 5 9 true"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "effect give @e[distance=0.1..5] blindness 5 9 true"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:toggle",
+                            "power": "*:*_toggle"
+                        },
+                        "ticks": 200
+                    }
+                ]
+            }
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 9
+        }
+    },
+    "no_move": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        },
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 5,
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:add_velocity",
+                    "x": 0,
+                    "z": 0,
+                    "y": 0,
+                    "set": true
+                }
+            }
+        },
+        "interval": 1
+    }
+}

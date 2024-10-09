@@ -1,0 +1,65 @@
+{
+    "hidden": true,
+    "condition": {
+        "inverted": true,
+        "type": "origins:dimension",
+        "dimension": "overworld"
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon wither_skeleton ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:stone_sword\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon wither_skeleton ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:stone_sword\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon wither_skeleton ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:stone_sword\",Count:1b},{}]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_end"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon shulker ~1 ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon shulker ~-1 ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 5
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

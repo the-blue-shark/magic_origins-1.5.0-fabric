@@ -1,0 +1,25 @@
+{
+    "name": "The Kraken",
+    "description": "A big mythical creature that hounts pirates.",
+    "powers": [
+        "magic_origins:kraken/bigger_kraken",
+        "magic_origins:kraken/tentacles",
+        "magic_origins:kraken/wave",
+        "magic_origins:kraken/tentacle_grap",
+        "origins:air_from_potions",
+        "origins:aquatiq",
+        "origins:aqua_affinity",
+        "origins:more_exhaustion",
+        "origins:carnivore",
+        "origins:water_vision",
+        "origins:conduit_power_on_land",
+        "origins:like_water",
+        "origins:water_breathing",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:glow_ink_sac",
+        "amount": 1
+    },
+    "impact": 3
+}

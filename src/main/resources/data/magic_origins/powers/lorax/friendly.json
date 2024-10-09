@@ -1,0 +1,142 @@
+{
+    "name": "Friendly",
+    "description": "You cannot harm passive mobs.",
+    "type": "origins:modify_damage_dealt",
+    "target_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:cow"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:axolotl"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:chicken"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:pig"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:iron_golem"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:allay"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:bat"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:cat"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:cod"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:donkey"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:fox"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:frog"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:glow_squid"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:horse"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:mooshroom"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:mule"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:ocelot"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:parrot"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:pig"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:pufferfish"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:rabbit"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:salmon"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:sheep"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:skeleton_horse"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:snow_golem"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:squid"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:strider"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:tadpole"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:tropical_fish"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:turtle"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:villager"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:wandering_trader"
+            }
+        ]
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": -10
+    }
+}

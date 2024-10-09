@@ -1,0 +1,111 @@
+{
+    "type": "origins:multiple",
+    "breath_weapon": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 30,
+                    "block": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:area_of_effect",
+                            "radius": 2.1,
+                            "shape": "sphere",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:set_on_fire",
+                                            "duration": 3
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 7,
+                                        "source": {
+                                            "name": "player"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "command_at_hit": "particle minecraft:soul_fire_flame ~ ~ ~ 0 0 0 0.05 500 force",
+                    "command_along_ray": "particle minecraft:soul_fire_flame ^ ^ ^ 0 0 0 0.02 50 force"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.blaze.shoot",
+                    "volume": 1,
+                    "pitch": 0.75
+                }
+            ]
+        },
+        "cooldown": 80,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 15
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "breath_weapon_aoe_fix": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 30,
+                    "block": true,
+                    "entity": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "command_at_hit": "summon minecraft:armor_stand ~ ~ ~ {Invisible:1b, NoAI:1b, Tags:[\"tokill\"]}"
+                }
+            ]
+        },
+        "cooldown": 80,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "breath_weapon_aoe_fix_armor_stand_obliterator": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "kill @e[type=minecraft:armor_stand,tag=tokill]"
+            }
+        },
+        "cooldown": 80,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "name": "§aBreath Weapon",
+    "description": "You have the ability to breath a midranged blast of blue fire with a short cooldown.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Has a range of 30 blocks, ignites entities caught in the blast and deals 7 damage to them. This includes yourself."
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, use with %s."
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Pirate",
+    "description": "You love the 7 seas.",
+    "powers": [
+        "magic_origins:pirate/hook",
+        "magic_origins:pirate/eye_patch",
+        "magic_origins:pirate/swim_speed",
+        "magic_origins:pirate/home",
+        "magic_origins:pirate/shiny",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:map",
+        "amount": 1
+    },
+    "impact": 1
+}

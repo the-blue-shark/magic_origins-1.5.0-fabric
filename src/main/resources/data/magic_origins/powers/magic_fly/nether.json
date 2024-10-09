@@ -1,0 +1,11 @@
+{
+    "name": "Nether Air",
+    "description": "You start to burn in the nether.",
+    "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_nether"
+    },
+    "type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 1
+}

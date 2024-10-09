@@ -1,0 +1,95 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "bite": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sand/sand_larvae/bite_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "weakness",
+                    "duration": 15,
+                    "amplifier": 0,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "blindness",
+                    "duration": 15,
+                    "amplifier": 99,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            ]
+        }
+    },
+    "biten": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sand/sand_larvae/bite_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "render_outline": false
+    },
+    "bitend": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sand/sand_larvae/bite_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:invulnerability"
+    },
+    "bitenddddddd": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:sand/sand_larvae/bite_resource",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "bitendd": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:sand/sand_larvae/bite_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:prevent_entity_collision"
+    }
+}

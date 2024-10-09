@@ -1,0 +1,29 @@
+{
+    "type": "origins:active_self",
+    "name": "Trapped Chest Disguise",
+    "description": "Turn yourself into a trapped chest and become invisible.",
+    "cooldown": 600,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @p run summon minecraft:armor_stand ~ ~-1 ~ {Invisible:1,NoGravity:1,Marker:1,CustomNameVisible:1,CustomName:'{\"text\":\"Trapped Chest\"}',ArmorItems:[{},{},{},{\"id\":\"minecraft:trapped_chest\",\"Count\":1b}]}"
+            },
+            {
+                "type": "origins:invisibility",
+                "render_armor": false
+            },
+            {
+                "type": "minecraft:execute_command",
+                "command": "effect give @p minecraft:slowness 999999 255 true"
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 1
+    },
+    "key": "key.origins.secondary_active"
+}

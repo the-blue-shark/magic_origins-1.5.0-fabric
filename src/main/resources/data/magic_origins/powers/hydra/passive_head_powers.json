@@ -1,0 +1,109 @@
+{
+    "name": "Health Over Time",
+    "description": "When a head is cut off, two grow from the stump, but if you burn the wound while it heals, the heads don't grow back.",
+    "type": "origins:multiple",
+    "heart_level_1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "generic.max_health",
+            "operation": "addition",
+            "value": -18
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "heart_level_2": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "generic.max_health",
+            "operation": "addition",
+            "value": -12
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "heart_level_3": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "generic.max_health",
+            "operation": "addition",
+            "value": -8
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "heart_level_4": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": "==",
+            "compare_to": 3
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "generic.max_health",
+            "operation": "addition",
+            "value": -4
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "blindness": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 40,
+        "tick_rate": 10,
+        "effect": {
+            "effect": "minecraft:blindness",
+            "duration": 40,
+            "amplifier": 1,
+            "show_particles": false,
+            "show_icon": true
+        }
+    },
+    "slowness": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:hydra/heads_headcount",
+            "comparison": ">",
+            "compare_to": 5
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 40,
+        "tick_rate": 10,
+        "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 40,
+            "amplifier": 1,
+            "show_particles": false,
+            "show_icon": true
+        }
+    }
+}

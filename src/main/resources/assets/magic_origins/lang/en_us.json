@@ -1,3 +1,13 @@
 {
-  "message.mimic.impossible": "You can't become that, you dummy"
+  "key.magic_origins.magic_origins_first_keybind": "Key bind one",
+  "key.magic_origins.magic_origins_second_keybind": "Key bind two",
+  "category.magic_origins.magic_origins_keybinds": "Magic Origins",
+
+  "death.attack.wave": "%1$s was overwhelmed by a wave attack",
+  "death.attack.wind_whirl": "%1$s was pushed too hard by a Wind Whirl",
+  "death.attack.tentacle": "%1$s was strangled to death by the kraken's tentacles",
+
+  "item.magic_origins.bamboo_sandwich": "Bamboo Sandwich",
+  "item.magic_origins.magic_origins_icon": "Magic Origins Icon",
+  "itemgroup.magic_origins.magic_origins_items": "Magic Origins"
 }

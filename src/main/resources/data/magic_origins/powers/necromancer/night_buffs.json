@@ -1,0 +1,28 @@
+{
+    "name": "Creature Of The Night",
+    "description": "Night time envelops your body with power",
+    "condition": {
+        "inverted": true,
+        "type": "origins:daytime"
+    },
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+        {
+            "attribute": "generic.movement_speed",
+            "operation": "addition",
+            "value": 0.015
+        },
+        {
+            "attribute": "generic.attack_damage",
+            "operation": "",
+            "value": 0.5
+        },
+        {
+            "attribute": "generic.armor",
+            "operation": "addition",
+            "value": 2
+        }
+    ],
+    "tick_rate": 20,
+    "update_health": true
+}

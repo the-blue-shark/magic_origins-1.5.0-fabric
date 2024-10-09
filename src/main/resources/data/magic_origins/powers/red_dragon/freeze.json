@@ -1,0 +1,12 @@
+{
+    "name": "Cold",
+    "description": "When you are in a cold biome you begin to freeze.",
+    "type": "origins:freeze",
+    "condition": {
+        "type": "origins:biome",
+        "condition": {
+            "type": "origins:precipitation",
+            "precipitation": "snow"
+        }
+    }
+}

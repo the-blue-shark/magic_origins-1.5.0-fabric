@@ -1,0 +1,12 @@
+{
+    "name": "One With Monsters",
+    "description": "Because you live under the monsters you have become immune to some effects",
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:wither",
+        "minecraft:poison",
+        "minecraft:hunger",
+        "minecraft:mining_fatigue",
+        "minecraft:slowness"
+    ]
+}

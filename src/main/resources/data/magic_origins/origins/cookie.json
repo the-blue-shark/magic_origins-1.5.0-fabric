@@ -1,0 +1,15 @@
+{
+    "name": "Cookie",
+    "description": "The ultimate life form :)",
+    "powers": [
+        "magic_origins:cookie/canibalism",
+        "magic_origins:cookie/spillage",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:cookie",
+        "amount": 1
+    },
+    "unchoosable": true,
+    "impact": 1
+}

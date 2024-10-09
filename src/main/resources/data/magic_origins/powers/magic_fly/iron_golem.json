@@ -1,0 +1,25 @@
+{
+    "type": "origins:active_self",
+    "name": "Hire Help",
+    "description": "You can summon an iron golem out of thin air.",
+    "cooldown": 6000,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "summon iron_golem"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound entity.iron_golem.repair master @p[distance=0..5]"
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 10
+    },
+    "key": "key.origins.secondary_active"
+}

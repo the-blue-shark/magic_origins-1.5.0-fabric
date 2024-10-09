@@ -1,0 +1,42 @@
+{
+    "name": "Nature's Gift",
+    "description": "When you are in nature biomes, like a forest you get some buffs",
+    "condition": {
+        "type": "origins:biome",
+        "biomes": [
+            "minecraft:forest",
+            "minecraft:birch_forest",
+            "minecraft:flower_forest",
+            "minecraft:old_growth_birch_forest",
+            "minecraft:windswept_forest",
+            "minecraft:warped_forest",
+            "minecraft:lush_caves",
+            "minecraft:crimson_forest",
+            "minecraft:warped_forest",
+            "minecraft:wooden_badlands",
+            "minecraft:jungle",
+            "minecraft:dark_forest"
+        ]
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 100,
+    "tick_rate": 10,
+    "effects": [
+        {
+            "effect": "minecraft:speed",
+            "duration": 100,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": false
+        },
+        {
+            "effect": "minecraft:haste",
+            "duration": 100,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ]
+}

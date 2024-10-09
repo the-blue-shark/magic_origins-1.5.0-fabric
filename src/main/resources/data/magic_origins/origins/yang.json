@@ -1,0 +1,15 @@
+{
+    "powers": [
+        "magic_origins:yinyang/yin/yangtransform",
+        "magic_origins:yinyang/yin/heal",
+        "magic_origins:yinyang/yin/lightning",
+        "magic_origins:yinyang/yin/transparency",
+        "magic_origins:yinyang/yin/darkweak",
+        "magic_origins:advancement"
+    ],
+    "icon": "minecraft:white_concrete",
+    "order": 1,
+    "impact": 2,
+    "name": "Yang",
+    "description": "Powerful light being with amazing powers, but it comes with its dark side Yin."
+}

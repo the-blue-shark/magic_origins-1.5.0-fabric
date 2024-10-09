@@ -1,0 +1,19 @@
+{
+    "name": "Ye Ship",
+    "description": "Ye feel more comfortable on a ship.",
+    "condition": {
+        "type": "origins:riding",
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:boat"
+            }
+        }
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 3
+    }
+}

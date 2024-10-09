@@ -1,0 +1,13 @@
+{
+    "name": "Nanobots",
+    "description": "Due to the nanobot technology inside Arkevas, they possess fulltime healing. often being able to heal from any injuries within minutes or hours",
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:saturation",
+            "duration": 1
+        }
+    },
+    "interval": 10
+}

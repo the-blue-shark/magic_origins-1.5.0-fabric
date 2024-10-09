@@ -1,0 +1,179 @@
+{
+    "type": "origins:multiple",
+    "hidden": false,
+    "name": "Blend",
+    "description": "When you shift you can blend yourself with the atmosphere. Works best at night. Be aware that you can only do this for so long.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "text": "Hold shift",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "toggle": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "resource": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 29,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 11
+        },
+        "min_action": {
+            "type": "origins:toggle",
+            "power": "*:*_toggle"
+        },
+        "max_action": {
+            "type": "origins:toggle",
+            "power": "*:*_toggle"
+        }
+    },
+    "cooldown": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 6.6,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "invis": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "type": "origins:invisibility",
+        "render_armor": false
+    },
+    "night": {
+        "type": "origins:action_over_time",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "day": {
+        "type": "origins:action_over_time",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "interval": 6.6,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "damage_taken": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -30,
+            "operation": "add"
+        },
+        "cooldown": 1
+    },
+    "uppon_hitting": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": -30,
+                "operation": "add"
+            }
+        },
+        "cooldown": 1
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Jumper",
+    "description": "You can jump very high (toggle with primary). Jumping this high does make you hungry. You take no fall damage",
+    "type": "origins:multiple",
+    "jump": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": ":_toggle"
+                }
+            ]
+        },
+        "type": "origins:modify_enchantment_level",
+        "enchantment": "minecraft:silk_touch",
+        "modifier": {
+            "operation": "set_total",
+            "value": 1
+        }
+    },
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "secondary"
+        },
+        "retain_state": true
+    }
+}

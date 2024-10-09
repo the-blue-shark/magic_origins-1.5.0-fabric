@@ -1,0 +1,39 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "phase": {
+        "type": "origins:phasing",
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "sand"
+                }
+            ]
+        },
+        "render_type": "blindness",
+        "view_distance": 10,
+        "phase_down_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "swim": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:in_block_anywhere",
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "sand"
+            }
+        }
+    }
+}

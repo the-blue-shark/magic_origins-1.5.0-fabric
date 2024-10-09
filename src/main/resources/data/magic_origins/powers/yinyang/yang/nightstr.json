@@ -1,0 +1,20 @@
+{
+    "type": "origins:stacking_status_effect",
+    "name": "Dark Powers",
+    "description": "You become stronger at night.",
+    "min_stacks": 0,
+    "max_stacks": 2,
+    "duration_per_stack": 20,
+    "effects": [
+        {
+            "effect": "minecraft:strength",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        }
+    ],
+    "condition": {
+        "type": "origins:daytime",
+        "inverted": true
+    }
+}

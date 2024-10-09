@@ -1,0 +1,30 @@
+{
+    "name": "Yang",
+    "description": "Switch to your yang form.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "origin set @s origins:origin magic_origins:yang",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s slowness 4 4"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s weakness 4 4"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s blindness 4 4"
+            }
+        ]
+    },
+    "key": {
+        "key": "key.loadToolbarActivator"
+    }
+}

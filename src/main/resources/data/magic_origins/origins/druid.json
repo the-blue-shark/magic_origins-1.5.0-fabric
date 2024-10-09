@@ -1,0 +1,24 @@
+{
+    "name": "Druid",
+    "description": "Magical creature of the forest.",
+    "powers": [
+        "magic_origins:druid/forest_buff",
+        "magic_origins:druid/nether_burn",
+        "magic_origins:druid/hot_debuff",
+        "origins:vegetarian",
+        "magic_origins:druid/roots",
+        "magic_origins:druid/roots2",
+        "magic_origins:druid/roots3",
+        "magic_origins:druid/regen",
+        "magic_origins:druid/fireweak",
+        "magic_origins:druid/green",
+        "magic_origins:hunger",
+        "magic_origins:fertilize",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:oak_sapling",
+        "amount": 1
+    },
+    "impact": 3
+}

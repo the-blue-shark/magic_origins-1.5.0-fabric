@@ -1,0 +1,6 @@
+{
+    "name": "Projectile Lazer",
+    "description": "Shoot a lazer with a 10 second cooldown.",
+    "hidden": true,
+    "type": "origins:simple"
+}

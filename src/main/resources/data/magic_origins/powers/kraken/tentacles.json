@@ -1,0 +1,11 @@
+{
+    "name": "Tentacles",
+    "description": "You have 8 tentacles that make you swim faster.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "additionalentityattributes:water_speed",
+        "name": "Additional swim speed",
+        "value": 1.5,
+        "operation": "multiply_total"
+    }
+}

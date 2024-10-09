@@ -1,0 +1,8 @@
+{
+    "name": "Winged",
+    "description": "Special green wings to soar the skies",
+    "loading_priority": 4,
+    "type": "origins:elytra_flight",
+    "texture_location": "minecraft:textures/entity/green_wings.png",
+    "render_elytra": true
+}

@@ -1,0 +1,78 @@
+{
+    "name": "Undead Warriors",
+    "description": "You are able to rise the dead to fight for you. Usable after 15 kills (3 flames will appear on your hotbar when you are able to use it).",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "revenant:zres",
+        "comparison": ">=",
+        "compare_to": 15
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "/kill @e[distance=0..52,type=zombie,team=undead]",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "/team add undead",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "/team join undead",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "/summon minecraft:zombie ~1 ~1 ~1 {CustomName:'[{\"text\":\"Undead Warrior\"}]',Health:15,Team:undead,HandItems:[{id:stone_sword,Count:1}],HandDropChances:[0.00f],ArmorItems:[{id:leather_boots,Count:1},{id:chainmail_leggings,Count:1},{id:leather_chestplate,Count:1},{id:leather_helmet,Count:1}],ArmorDropChances:[0.00f,0.00f,0.00f,0.00f],Attributes:[{Name:\"generic.movement_speed\",Base:0.3f},{Name:\"generic.max_health\",Base:15f}]}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "/summon minecraft:zombie ~ ~1 ~1 {CustomName:'[{\"text\":\"Undead Chief\"}]',Health:30,Team:undead,HandItems:[{id:iron_axe,Count:1}],HandDropChances:[0.00f],ArmorItems:[{id:leather_boots,Count:1},{id:chainmail_leggings,Count:1},{id:chainmail_chestplate,Count:1},{id:carved_pumpkin,Count:1}],ArmorDropChances:[0.00f,0.00f,0.00f,0.00f],Attributes:[{Name:\"generic.max_health\",Base:30f}]}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "/summon minecraft:zombie ~-1 ~1 ~1 {CustomName:'[{\"text\":\"Undead Warrior\"}]',Health:15,Team:undead,HandItems:[{id:stone_sword,Count:1}],HandDropChances:[0.00f],ArmorItems:[{id:leather_boots,Count:1},{id:chainmail_leggings,Count:1},{id:leather_chestplate,Count:1},{id:leather_helmet,Count:1}],ArmorDropChances:[0.00f,0.00f,0.00f,0.00f],Attributes:[{Name:\"generic.movement_speed\",Base:0.3f},{Name:\"generic.max_health\",Base:15f}]}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.respawn_anchor.set_spawn",
+                "volume": 1,
+                "pitch": 1
+            },
+            {
+                "type": "origins:spawn_particles",
+                "particle": "minecraft:small_flame",
+                "count": 50,
+                "speed": 0.2,
+                "spread": {
+                    "x": 0.5,
+                    "y": 0.2,
+                    "z": 0.5
+                }
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "revenant:zres",
+                "change": -15,
+                "operation": "add"
+            }
+        ]
+    },
+    "cooldown": 1600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 19
+    },
+    "key": {
+        "key": "key.saveToolbarActivator"
+    }
+}

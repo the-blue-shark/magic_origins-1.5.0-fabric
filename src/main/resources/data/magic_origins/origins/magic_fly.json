@@ -1,0 +1,25 @@
+{
+    "name": "Magical Fly",
+    "description": "Little allay like creature home in nature.",
+    "powers": [
+        "magic_origins:magic_fly/vegie",
+        "magic_origins:magic_fly/fairy_wings",
+        "magic_origins:magic_fly/forest_buffs",
+        "magic_origins:magic_fly/size",
+        "magic_origins:magic_fly/6hp",
+        "magic_origins:magic_fly/no_swords",
+        "magic_origins:magic_fly/iron_golem",
+        "magic_origins:magic_fly/hot_debuf",
+        "magic_origins:magic_fly/nether",
+        "magic_origins:hunger",
+        "magic_origins:slow",
+        "magic_origins:heal",
+        "magic_origins:awareness",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:end_crystal",
+        "amount": 1
+    },
+    "impact": 3
+}

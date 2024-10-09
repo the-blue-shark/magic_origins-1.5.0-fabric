@@ -1,0 +1,17 @@
+{
+    "name": "Creature Of The Night",
+    "description": "this shouldnt be displayed, please report in discord",
+    "hidden": true,
+    "condition": {
+        "inverted": true,
+        "type": "origins:daytime"
+    },
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4
+    },
+    "tick_rate": 20,
+    "update_health": true
+}

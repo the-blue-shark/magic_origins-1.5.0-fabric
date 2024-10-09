@@ -1,0 +1,22 @@
+{
+    "name": "One With Undead",
+    "description": "You are undead aswell so the sun is your weakness",
+    "condition": {
+        "type": "origins:exposed_to_sun"
+    },
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+        {
+            "attribute": "generic.movement_speed",
+            "operation": "addition",
+            "value": -0.025
+        },
+        {
+            "attribute": "generic.attack_damage",
+            "operation": "addition",
+            "value": -2
+        }
+    ],
+    "tick_rate": 20,
+    "update_health": true
+}

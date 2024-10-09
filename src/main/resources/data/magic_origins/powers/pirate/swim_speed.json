@@ -1,0 +1,9 @@
+{
+    "name": "Ye' Travlin Knowledge",
+    "description": "Ye know yer way around the ocean.",
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 1.5
+    }
+}

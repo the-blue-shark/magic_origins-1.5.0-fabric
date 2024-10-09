@@ -1,0 +1,22 @@
+{
+    "name": "Excess Energy",
+    "description": "When you have too much energy you release it through your legs",
+    "loading_priority": 2,
+    "condition": {
+        "type": "origins:food_level",
+        "comparison": "==",
+        "compare_to": 20
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 100,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100,
+        "amplifier": 10,
+        "show_particles": false,
+        "show_icon": false
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "powers": [
+        "magic_origins:yinyang/yang/yintransform",
+        "magic_origins:yinyang/yang/cloud",
+        "magic_origins:yinyang/yang/posess",
+        "magic_origins:yinyang/yang/transparency1",
+        "magic_origins:yinyang/yang/dayweak",
+        "magic_origins:yinyang/yang/invis_temp",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:black_concrete",
+        "amount": 1
+    },
+    "impact": 2,
+    "unchoosable": true,
+    "name": "Yin",
+    "description": "Powerful dark being with deadly powers, but it comes with a light side Yang."
+}

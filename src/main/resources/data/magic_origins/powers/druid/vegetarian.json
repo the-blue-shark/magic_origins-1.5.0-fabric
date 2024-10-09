@@ -1,0 +1,8 @@
+{
+    "name": "Bad Stomach",
+    "description": "Meat contains useless vitamins so you eat vegetables",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:meat"
+    }
+}

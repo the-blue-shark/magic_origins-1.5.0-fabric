@@ -1,0 +1,273 @@
+{
+    "type": "origins:multiple",
+    "hidden": false,
+    "name": "Healing Aura",
+    "description": "Make the entities around you stronger by bringing them back to full health.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "text": "Trigger with %s!",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "activate": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_allow_power",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon area_effect_cloud ~ ~ ~ {Radius:5f,Duration:200,Color:16735924,Tags:[\"heal_cloud\"],Potion:\"minecraft:healing\",Effects:[{Id:10,Amplifier:1b,Duration:100,ShowParticles:1b}]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound entity.wandering_trader.drink_potion neutral @a[distance=0..5] ~ ~ ~ 100000"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "activate_night": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_allow_power",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon area_effect_cloud ~ ~ ~ {Radius:5f,Duration:60,Color:16735924,Tags:[\"heal_cloud\"],Potion:\"minecraft:healing\",Effects:[{Id:10,Amplifier:1b,Duration:100,ShowParticles:1b}]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound entity.wandering_trader.drink_potion neutral @a[distance=0..5] ~ ~ ~ 100000"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "toggle": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "toggle2": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "resource": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 15,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9,
+            "condition": {
+                "inverted": true,
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 30
+                    }
+                ]
+            }
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:toggle",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_recharge",
+                    "change": 1,
+                    "operation": "set"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:toggle",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_allow_power",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_recharge",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "allow_power": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9
+        }
+    },
+    "recharge": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9
+        }
+    },
+    "cooldown": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_recharge",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "night": {
+        "type": "origins:action_over_time",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "day": {
+        "type": "origins:action_over_time",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "interval": 6.6,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1,
+            "operation": "add"
+        }
+    }
+}

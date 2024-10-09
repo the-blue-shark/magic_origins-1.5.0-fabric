@@ -1,0 +1,108 @@
+{
+    "name": "Nutrient Sharing",
+    "description": "Give food and nutrients to less grown plants",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "text": "Sneak to activate",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 600,
+        "start_value": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 18
+        }
+    },
+    "recharge": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:exposed_to_sun"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_bar",
+            "modifier": {
+                "operation": "add_base_early",
+                "value": 1
+            }
+        }
+    },
+    "ability": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_bar",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "origins:bonemealable"
+                    },
+                    "radius": 2,
+                    "shape": "sphere",
+                    "comparison": "<=",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_bar",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": -10
+                    }
+                },
+                {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:block_action_at",
+                            "block_action": {
+                                "type": "origins:bonemeal",
+                                "effects": true
+                            }
+                        },
+                        {
+                            "type": "origins:block_action_at",
+                            "block_action": {
+                                "type": "origins:offset",
+                                "action": {
+                                    "type": "origins:bonemeal",
+                                    "effects": true
+                                },
+                                "y": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

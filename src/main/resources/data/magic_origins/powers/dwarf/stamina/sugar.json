@@ -1,0 +1,473 @@
+{
+    "name": "Truly Addicted to Sugar",
+    "description": "Your sugar levels control your speed, jump height and reach. For each level, the equivalent of 10 sugars need to be ate. (You can use any sugary item listed in the recipe above). Your sugar level also goes down over time. \n\n Use abilities to jump high or run fast. Every second counts",
+    "badges": [
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "minecraft:textures/item/sugar.png",
+            "recipe": {
+                "id": "minecraft:sugars",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    {
+                        "item": "minecraft:sugar"
+                    },
+                    {
+                        "item": "minecraft:honey_bottle"
+                    },
+                    {
+                        "item": "minecraft:pumpkin_pie"
+                    },
+                    {
+                        "item": "minecraft:cake"
+                    },
+                    {
+                        "item": "minecraft:cookie"
+                    }
+                ],
+                "result": {
+                    "item": "minecraft:sugar",
+                    "count": 1
+                }
+            }
+        },
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger speed boost with %s"
+        },
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger jump boost with your secondary ability!"
+        }
+    ],
+    "type": "origins:multiple",
+    "speed_boost": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:speed",
+                        "duration": 41,
+                        "amplifier": 4,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_sugar_level",
+                    "modifier": {
+                        "operation": "addition",
+                        "value": -1
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.loadToolbarActivator",
+            "continuous": true
+        }
+    },
+    "jump_boost": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:jump_boost",
+                        "duration": 41,
+                        "amplifier": 4,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_sugar_level",
+                    "modifier": {
+                        "operation": "addition",
+                        "value": -1
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        }
+    },
+    "speed": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": ">=",
+            "compare_to": 40
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:motion 2 @s"
+        }
+    },
+    "jump": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": ">=",
+            "compare_to": 80
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:jump_height 1.5 @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:step_height 2 @s"
+                }
+            ]
+        }
+    },
+    "reach": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": ">=",
+            "compare_to": 120
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:reach 3.5 @s"
+        }
+    },
+    "sugar": {
+        "type": "origins:edible_item",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:sugar"
+            }
+        },
+        "food_component": {
+            "hunger": 1,
+            "saturation": 0.2
+        },
+        "consume_animation": "eat",
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 4
+            }
+        }
+    },
+    "honey": {
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:honey_bottle"
+            }
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 12
+            }
+        }
+    },
+    "cookie": {
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:cookie"
+            }
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 4
+            }
+        }
+    },
+    "pumpkin_pie": {
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:pumpkin_pie"
+            }
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 12
+            }
+        }
+    },
+    "cake_slice": {
+        "type": "origins:action_on_block_use",
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:block_state",
+                    "property": "bites",
+                    "comparison": "<",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:cake"
+                }
+            ]
+        },
+        "block_action": {
+            "type": "origins:modify_block_state",
+            "property": "bites",
+            "operation": "add",
+            "change": 1
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 4
+            }
+        }
+    },
+    "cake_slice_break": {
+        "type": "origins:action_on_block_use",
+        "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:block_state",
+                    "property": "bites",
+                    "comparison": "==",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:cake"
+                }
+            ]
+        },
+        "block_action": {
+            "type": "origins:set_block",
+            "block": "minecraft:air"
+        },
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 4
+            }
+        }
+    },
+    "cake": {
+        "type": "origins:edible_item",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:cake"
+            }
+        },
+        "food_component": {
+            "hunger": 4,
+            "saturation": 1.8
+        },
+        "consume_animation": "eat",
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 40
+            }
+        }
+    },
+    "marshmellow": {
+        "type": "origins:edible_item",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{display:{Name:'{\"text\":\"Marshmallow\",\"italic\":false}'},CustomModelData:690015}"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:sugar"
+                    }
+                }
+            ]
+        },
+        "food_component": {
+            "hunger": 2,
+            "saturation": 0.4
+        },
+        "consume_animation": "eat",
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": 12
+            }
+        }
+    },
+    "sugar_level": {
+        "type": "origins:resource",
+        "max": 160,
+        "min": 0,
+        "start_value": 20,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 17
+        }
+    },
+    "countdown1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_sugar_level",
+            "comparison": "<=",
+            "compare_to": 40
+        },
+        "type": "origins:action_over_time",
+        "interval": 1000,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": -4
+            }
+        }
+    },
+    "countdown2": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": ">",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": "<=",
+                    "compare_to": 80
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 800,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": -4
+            }
+        }
+    },
+    "countdown3": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": ">",
+                    "compare_to": 80
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": "<=",
+                    "compare_to": 120
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 600,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": -4
+            }
+        }
+    },
+    "countdown4": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": ">",
+                    "compare_to": 120
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_sugar_level",
+                    "comparison": "<=",
+                    "compare_to": 160
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 400,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_sugar_level",
+            "modifier": {
+                "operation": "addition",
+                "value": -4
+            }
+        }
+    }
+}

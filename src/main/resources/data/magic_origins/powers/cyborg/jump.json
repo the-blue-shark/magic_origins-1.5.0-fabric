@@ -1,0 +1,16 @@
+{
+    "name": "Strong Legs",
+    "description": "Use your strong legs to jump high into the air",
+    "type": "origins:launch",
+    "cooldown": 400,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "sound": "minecraft:entity.parrot.fly",
+    "speed": 1.5,
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": true
+    }
+}

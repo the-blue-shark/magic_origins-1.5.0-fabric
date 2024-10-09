@@ -1,0 +1,315 @@
+{
+    "name": "Summon",
+    "description": "Be able to summon some alies to fight with you during the night",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "inverted": true,
+                "type": "origins:dimension",
+                "dimension": "the_end"
+            },
+            {
+                "inverted": true,
+                "type": "origins:daytime"
+            },
+            {
+                "inverted": true,
+                "type": "origins:dimension",
+                "dimension": "the_nether"
+            }
+        ]
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:snowy_plains",
+                        "minecraft:frozen_river",
+                        "minecraft:ice_spikes",
+                        "minecraft:snowy_taiga",
+                        "minecraft:snowy_beach",
+                        "minecraft:frozen_ocean",
+                        "minecraft:deep_frozen_ocean"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon stray ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:bow\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon stray ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:bow\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon stray ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:bow\",Count:1b},{}]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:warm_ocean",
+                        "minecraft:deep_lukewarm_ocean",
+                        "minecraft:ocean",
+                        "minecraft:deep_ocean",
+                        "minecraft:cold_ocean",
+                        "minecraft:deep_cold_ocean"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon guardian ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon guardian ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon guardian ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:desert"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon husk ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon husk ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon husk ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon husk ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon husk ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:old_growth_pine_taiga",
+                        "minecraft:old_growth_spruce_taiga",
+                        "minecraft:taiga"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon vindicator ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:iron_axe\",Count:1b}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon pillager ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon pillager ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon pillager ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon pillager ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b}]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:plains",
+                        "minecraft:forest",
+                        "minecraft:flower_forest",
+                        "minecraft:birch_forest",
+                        "minecraft:old_growth_birch_forest"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon skeleton ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:bow\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon skeleton ~ ~ ~ {Tags:[\"necro\"],HandItems:[{id:\"minecraft:bow\",Count:1b},{}]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:swamp"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon witch ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon witch ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:river"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon drowned ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon drowned ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon drowned ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon drowned ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon drowned ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "inverted": true,
+                    "type": "origins:biome",
+                    "biomes": [
+                        "minecraft:snowy_plains",
+                        "minecraft:frozen_river",
+                        "minecraft:ice_spikes",
+                        "minecraft:snowy_taiga",
+                        "minecraft:snowy_beach",
+                        "minecraft:frozen_ocean",
+                        "minecraft:deep_frozen_ocean",
+                        "minecraft:desert",
+                        "minecraft:swamp",
+                        "minecraft:old_growth_pine_taiga",
+                        "minecraft:old_growth_spruce_taiga",
+                        "minecraft:taiga",
+                        "minecraft:plains",
+                        "minecraft:forest",
+                        "minecraft:flower_forest",
+                        "minecraft:birch_forest",
+                        "minecraft:old_growth_birch_forest",
+                        "minecraft:river",
+                        "minecraft:warm_ocean",
+                        "minecraft:deep_lukewarm_ocean",
+                        "minecraft:ocean",
+                        "minecraft:deep_ocean",
+                        "minecraft:cold_ocean",
+                        "minecraft:deep_cold_ocean"
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "summon zombie ~ ~ ~ {Tags:[\"necro\"]}"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 5
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "test",
+    "description": "This is for testing power",
+    "powers": [],
+    "icon": {
+        "item": "minecraft:command_block",
+        "amount": 1
+    },
+    "unchoosable": true,
+    "impact": 3
+}

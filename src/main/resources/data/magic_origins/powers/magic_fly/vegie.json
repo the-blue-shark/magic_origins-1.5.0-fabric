@@ -1,0 +1,8 @@
+{
+    "name": "Vegetarian",
+    "description": "Killing animals is way to cruel for your own mental health so plants are ate instead.",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:meat"
+    }
+}

@@ -1,0 +1,354 @@
+{
+    "name": "Fire Breath",
+    "description": "Breathe fire to burn your enemies.\n\nOr, summon a fireball to attack from afar.",
+    "type": "origins:multiple",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger Fire Breath with [Save Hotbar Activator]"
+        },
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger Fireball with %s!"
+        }
+    ],
+    "breath_weapon-edited_version_of_jingos_power": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 3
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 1200
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 30,
+                    "block": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 7,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 3
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 5,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 7
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 2,
+                                                "source": {
+                                                    "name": "player"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 3,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 10
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 4,
+                                                "source": {
+                                                    "name": "player"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 2,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 15
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 8,
+                                                "source": {
+                                                    "name": "player"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 1,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 20
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 12,
+                                                "source": {
+                                                    "name": "player"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "before_action": {
+                        "type": "origins:raycast",
+                        "distance": 30,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "command_at_hit": "summon minecraft:armor_stand ~ ~ ~ {Invisible:1b, NoAI:1b, Tags:[\"tokill\"]}"
+                    },
+                    "command_at_hit": "particle minecraft:flame ~ ~ ~ 0 0 0 0.05 500 force",
+                    "command_along_ray": "particle minecraft:small_flame ^ ^ ^ 0 0 0 0.02 25 force"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.blaze.shoot",
+                    "volume": 1,
+                    "pitch": 0.75
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[type=minecraft:armor_stand,tag=tokill]"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.loadToolbarActivator"
+        }
+    },
+    "flame_thrower": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 3
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": ">=",
+                    "compare_to": 20
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 1,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:set_on_fire",
+                                                    "duration": 20
+                                                }
+                                            },
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 1,
+                                                "source": {
+                                                    "name": "player"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "command_along_ray": "particle minecraft:small_flame ^ ^-0.125 ^ 0 0 0 0.02 5 force"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.lava.pop",
+                    "volume": 1,
+                    "pitch": 0.75
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.saveToolbarActivator",
+            "continuous": true
+        }
+    },
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1200,
+        "start_value": 1200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 16,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/heads_headcount",
+                        "comparison": ">=",
+                        "compare_to": 4
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/ability_toggle_current_ability",
+                        "comparison": "==",
+                        "compare_to": 3
+                    }
+                ]
+            }
+        }
+    },
+    "recharge": {
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hydra/ability_toggle_current_ability",
+                "comparison": "==",
+                "compare_to": 3
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 2,
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:meat"
+    },
+    "name": "White Teeth",
+    "description": "Just vegetables are used to keep your teeth white"
+}

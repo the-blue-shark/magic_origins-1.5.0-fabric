@@ -1,0 +1,43 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:sand"
+                }
+            },
+            {
+                "type": "origins:in_block_anywhere",
+                "block_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "sand"
+                }
+            }
+        ]
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 4,
+    "duration_per_stack": 5,
+    "tick_rate": 10,
+    "effects": [
+        {
+            "effect": "strength",
+            "duration": 5,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": false
+        },
+        {
+            "effect": "speed",
+            "duration": 5,
+            "amplifier": 4,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ]
+}

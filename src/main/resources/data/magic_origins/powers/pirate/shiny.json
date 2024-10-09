@@ -1,0 +1,69 @@
+{
+    "name": "Materialist",
+    "description": "e love the feel o' gold, ye cannot wear anythin' other.",
+    "type": "origins:restrict_armor",
+    "head": {
+        "inverted": true,
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "minecraft:piglin_loved"
+                }
+            },
+            {
+                "type": "origins:nbt",
+                "nbt": "{Trim:{material:\"minecraft:gold\",}}"
+            }
+        ]
+    },
+    "chest": {
+        "inverted": true,
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "minecraft:piglin_loved"
+                }
+            },
+            {
+                "type": "origins:nbt",
+                "nbt": "{Trim:{material:\"minecraft:gold\",}}"
+            }
+        ]
+    },
+    "legs": {
+        "inverted": true,
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "minecraft:piglin_loved"
+                }
+            },
+            {
+                "type": "origins:nbt",
+                "nbt": "{Trim:{material:\"minecraft:gold\",}}"
+            }
+        ]
+    },
+    "feet": {
+        "inverted": true,
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "minecraft:piglin_loved"
+                }
+            },
+            {
+                "type": "origins:nbt",
+                "nbt": "{Trim:{material:\"minecraft:gold\",}}"
+            }
+        ]
+    }
+}

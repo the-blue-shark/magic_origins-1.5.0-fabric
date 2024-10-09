@@ -1,0 +1,8 @@
+{
+    "name": "Shiny",
+    "description": "Green dragon's are made of emeralds",
+    "loading_priority": 1,
+    "type": "origins:model_color",
+    "red": 0.5,
+    "blue": 0.5
+}

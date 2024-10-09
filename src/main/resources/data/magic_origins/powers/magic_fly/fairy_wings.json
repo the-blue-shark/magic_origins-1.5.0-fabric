@@ -1,0 +1,8 @@
+{
+    "name": "Winged",
+    "description": "You have little gray wings on your back.",
+    "loading_priority": 4,
+    "type": "origins:elytra_flight",
+    "texture_location": "minecraft:textures/entity/vex_wings.png",
+    "render_elytra": true
+}

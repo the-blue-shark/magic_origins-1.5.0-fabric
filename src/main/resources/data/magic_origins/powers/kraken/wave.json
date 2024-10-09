@@ -1,0 +1,46 @@
+{
+    "type": "origins:multiple",
+    "push": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 5,
+                    "bientity_action": {
+                        "type": "origins:damage",
+                        "amount": 4,
+                        "source": {
+                            "name": "wave"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 5,
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "z": 2,
+                        "y": 0.75
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.player.splash.high_speed neutral @a[distance=0..5] ~ ~ ~ 100000"
+                }
+            ]
+        },
+        "cooldown": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 10
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "name": "Splash Wave",
+    "description": "You splash the area around you, pushing enemies away."
+}

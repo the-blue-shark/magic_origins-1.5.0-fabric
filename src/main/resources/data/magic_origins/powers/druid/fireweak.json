@@ -1,0 +1,13 @@
+{
+    "name": "Plant Material",
+    "description": "You are made out of plants so you are vulnerable to fire",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:fire"
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 0.5,
+        "name": "More fire damage taken"
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "1": {
+        "hidden": true,
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_check",
+                    "modifier": {
+                        "operation": "set_total",
+                        "value": 1
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:modify_resource",
+                        "resource": "*:*_check",
+                        "modifier": {
+                            "operation": "set_total",
+                            "value": 0
+                        }
+                    },
+                    "ticks": 100
+                }
+            ]
+        },
+        "cooldown": 300,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 1
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "2": {
+        "hidden": true,
+        "condition": {
+            "resource": "*:*_check",
+            "type": "origins:resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 2
+        }
+    },
+    "3": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_check",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 2
+        }
+    },
+    "name": "Wreckless Attack",
+    "description": "You can wrecklessly attack for 5 seconds. Thus making all damage you give or take dubbled.",
+    "type": "origins:multiple",
+    "check": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0
+    }
+}

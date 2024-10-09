@@ -1,0 +1,21 @@
+{
+    "name": "Sand Worm",
+    "description": "A creature from the sand. Know to eat other animals.",
+    "unchoosable": true,
+    "powers": [
+        "magic_origins:sand/sand_larvae/air_swim",
+        "magic_origins:sand/sand_larvae/advancement",
+        "magic_origins:sand/sand_larvae/hp",
+        "magic_origins:sand/sand_larvae/size",
+        "magic_origins:sand/sand_larvae/bite",
+        "magic_origins:sand/sand_larvae/spit",
+        "magic_origins:sand/sand_larvae/sand_confidene",
+        "magic_origins:sand/sand_larvae/desert",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:sand",
+        "amount": 1
+    },
+    "impact": 2
+}

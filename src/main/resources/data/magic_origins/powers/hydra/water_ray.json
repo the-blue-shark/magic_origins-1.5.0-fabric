@@ -1,0 +1,165 @@
+{
+    "name": "Water Ray",
+    "description": "Use the head of water to shoot water.",
+    "type": "origins:multiple",
+    "push": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 3
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 120
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 15,
+                    "block": true,
+                    "entity": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:area_of_effect",
+                                    "radius": 4,
+                                    "include_target": true,
+                                    "shape": "sphere",
+                                    "bientity_action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:damage",
+                                                "amount": 8,
+                                                "source": {
+                                                    "name": "wave"
+                                                },
+                                                "damage_type": "minecraft:drown"
+                                            },
+                                            {
+                                                "type": "origins:target_action",
+                                                "action": {
+                                                    "type": "origins:gain_air",
+                                                    "value": -30
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "before_action": {
+                        "type": "origins:raycast",
+                        "distance": 15,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "any",
+                        "command_at_hit": "summon minecraft:armor_stand ~ ~ ~ {Invisible:1b, NoAI:1b, Tags:[\"tokill\"]}"
+                    },
+                    "command_at_hit": "particle dust 0.380 0.773 1.000 2 ~ ~ ~ 0 0 0 0.05 100 normal",
+                    "command_along_ray": "particle dust 0.380 0.773 1.000 1 ~ ~ ~ 0 0 0 0.02 10 normal"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.bubble_column.upwards_inside",
+                    "volume": 1,
+                    "pitch": 0.75
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[type=minecraft:armor_stand,tag=tokill]"
+                    },
+                    "ticks": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.loadToolbarActivator"
+        }
+    },
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 120,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 21,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/heads_headcount",
+                        "comparison": ">=",
+                        "compare_to": 3
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/ability_toggle_current_ability",
+                        "comparison": "==",
+                        "compare_to": 2
+                    }
+                ]
+            }
+        }
+    },
+    "recharge": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hydra/ability_toggle_current_ability",
+                "comparison": "==",
+                "compare_to": 2
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 2,
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    }
+}

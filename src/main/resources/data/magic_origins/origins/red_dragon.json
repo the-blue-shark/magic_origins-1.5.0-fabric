@@ -1,0 +1,21 @@
+{
+    "name": "Red dragon",
+    "description": "A mythical creature found in the nether.",
+    "powers": [
+        "origins:fire_immunity",
+        "origins:nether_spawn",
+        "origins:burning_wrath",
+        "origins:water_vulnerability",
+        "origins:hotblooded",
+        "magic_origins:red_dragon/freeze",
+        "magic_origins:red_dragon/size69",
+        "magic_origins:red_dragon/wreckless",
+        "origins:carnivore",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:redstone",
+        "amount": 1
+    },
+    "impact": 3
+}

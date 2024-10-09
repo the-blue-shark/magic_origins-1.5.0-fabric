@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "type": "origins:restrict_armor",
+    "head": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "inverted": true,
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]}"
+            }
+        ]
+    }
+}

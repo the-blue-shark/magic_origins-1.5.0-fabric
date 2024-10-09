@@ -1,0 +1,21 @@
+{
+    "name": "Hurting Light",
+    "description": "Your hearts light up yellow when you enter light.",
+    "condition": {
+        "type": "origins:brightness",
+        "comparison": ">=",
+        "compare_to": 0.2727273
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 60,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "poison",
+        "duration": 60,
+        "amplifier": 1,
+        "show_particles": false,
+        "show_icon": true
+    }
+}

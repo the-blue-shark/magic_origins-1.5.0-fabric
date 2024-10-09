@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:type",
+        "damage_type": "minecraft:in_fire"
+    },
+    "damage_armor_condition": {
+        "inverted": true,
+        "type": "origins:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+            "type": "origins:nbt",
+            "nbt": "{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]}"
+        }
+    }
+}

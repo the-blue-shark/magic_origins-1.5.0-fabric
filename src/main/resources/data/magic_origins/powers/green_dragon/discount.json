@@ -1,0 +1,17 @@
+{
+    "name": "Protector of the Village",
+    "description": "Villagers call you the hero of their village",
+    "loading_priority": 2,
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 100,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "minecraft:hero_of_the_village",
+        "duration": 100,
+        "amplifier": 6,
+        "show_particles": false,
+        "show_icon": false
+    }
+}

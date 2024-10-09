@@ -1,0 +1,102 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "toggle": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "key": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.loadToolbarActivator"
+        },
+        "cooldown": 200,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:daytime",
+                "inverted": false
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_toggle"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:toggle",
+                            "power": "*:*_toggle"
+                        },
+                        "ticks": 100
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:toggle",
+                        "power": "*:*_toggle"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:toggle",
+                            "power": "*:*_toggle"
+                        },
+                        "ticks": 100
+                    }
+                ]
+            }
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 9
+        }
+    },
+    "stand_still": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "axes": [
+            "x",
+            "z",
+            "y"
+        ]
+    },
+    "file_": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        },
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 2,
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:add_velocity",
+                    "x": 0,
+                    "z": 0,
+                    "y": 0,
+                    "set": true
+                }
+            }
+        },
+        "interval": 1
+    }
+}

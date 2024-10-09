@@ -1,0 +1,20 @@
+{
+    "name": "Necromancer",
+    "description": "A mythical creature that uses the power of the night to summon allies.",
+    "powers": [
+        "magic_origins:necromancer/night_buffs",
+        "magic_origins:necromancer/night_buffs2",
+        "magic_origins:necromancer/mysterous",
+        "magic_origins:necromancer/emume",
+        "magic_origins:necromancer/summon/sz_summon",
+        "magic_origins:necromancer/summon/a_summon",
+        "magic_origins:necromancer/summon/d_summon",
+        "magic_origins:necromancer/cloak",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:soul_soil",
+        "amount": 1
+    },
+    "impact": 2
+}

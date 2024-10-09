@@ -1,0 +1,24 @@
+{
+    "hidden": true,
+    "type": "origins:edible_item",
+    "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'{\"text\":\"Marshmallow\",\"italic\":false}'},CustomModelData:690015}"
+            },
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:sugar"
+                }
+            }
+        ]
+    },
+    "food_component": {
+        "hunger": 6,
+        "saturation": 0.6
+    },
+    "consume_animation": "eat"
+}

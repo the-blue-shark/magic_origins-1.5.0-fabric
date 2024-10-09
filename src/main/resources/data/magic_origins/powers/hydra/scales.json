@@ -1,0 +1,13 @@
+{
+    "name": "Hard Scales",
+    "description": "Your skin is made of scales which block small sharp items, like cacti.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:type",
+        "damage_type": "cactus"
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

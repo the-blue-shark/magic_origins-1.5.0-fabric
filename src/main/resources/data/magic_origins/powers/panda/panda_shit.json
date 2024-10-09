@@ -1,0 +1,89 @@
+{
+    "name": "Poo",
+    "description": "Even though you love bamboo, it isn't good for your stomach. Thats why after you eat 5 bamboo you can poop out all of your poo to slow down enimies.",
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "max": 5,
+        "min": 0,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 4
+        }
+    },
+    "shit": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "magic_origins:panda/panda_shit_resource",
+            "comparison": "==",
+            "compare_to": 5
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound block.wart_block.break master @a[distance=0..5]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @e[distance=0.1..3] slowness 10 99"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @e[distance=0.1..5] nausea 10 99"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~ ~ ~ 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~1 ~ ~ 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~ ~ ~1 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~0.7 ~ ~0.7 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~-0.7 ~ ~-0.7 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~-1 ~ ~ 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~ ~ ~-1 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~-0.7 ~ ~0.7 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust 0.431 0.306 0.196 6 ~0.7 ~ ~-0.7 0 0 0 1 4 normal"
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "magic_origins:panda/panda_shit_resource",
+                    "modifier": {
+                        "operation": "set_total",
+                        "value": 0
+                    }
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    }
+}

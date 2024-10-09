@@ -1,0 +1,9 @@
+{
+    "name": "Low Metabolism",
+    "description": "You lose hunger slower.",
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.6
+    }
+}

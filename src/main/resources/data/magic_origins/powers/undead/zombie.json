@@ -1,0 +1,17 @@
+{
+    "name": "Family",
+    "description": "You playfully fight with your undead friends, zombies even hug you",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:entity_group",
+            "group": "undead"
+        }
+    },
+    "modifier": {
+        "operation": "set_base",
+        "value": 1,
+        "name": "Family"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Seethrough",
+    "description": "You blend more with the light, only if it’s yellow though.",
+    "type": "origins:model_color",
+    "red": 0.9,
+    "green": 0.9,
+    "alpha": 0.8,
+    "blue": 0.1
+}

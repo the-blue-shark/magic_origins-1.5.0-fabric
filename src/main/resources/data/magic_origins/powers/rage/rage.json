@@ -1,0 +1,114 @@
+{
+    "name": "Ghostly Temper",
+    "description": "You are able to unleash your true power when you are angry .Usable after 30 kills (7 flames will appear on your hotbar when you are able to use it)",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "revenant:zres",
+        "comparison": "==",
+        "compare_to": 30
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/scale set pehkui:health 2.2 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/scale add pehkui:attack 0.3 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/scale set pehkui:height 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/scale set pehkui:width 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/scale set pehkui:reach 1.15 @s"
+            },
+            {
+                "type": "origins:heal",
+                "amount": 15
+            },
+            {
+                "type": "origins:delay",
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "/scale reset @s"
+                },
+                "ticks": 1600
+            },
+            {
+                "type": "origins:delay",
+                "action": {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.ravager.death",
+                    "volume": 1,
+                    "pitch": 2
+                },
+                "ticks": 1600
+            },
+            {
+                "type": "origins:delay",
+                "action": {
+                    "type": "origins:spawn_particles",
+                    "particle": "squid_ink",
+                    "count": 5,
+                    "speed": 7,
+                    "spread": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                "ticks": 1600
+            },
+            {
+                "type": "origins:spawn_particles",
+                "particle": "squid_ink",
+                "count": 5,
+                "speed": 7,
+                "spread": {
+                    "x": 1,
+                    "y": 1,
+                    "z": 1
+                }
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.ravager.attack",
+                "volume": 1,
+                "pitch": 2
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "revenant:zres",
+                "change": -30,
+                "operation": "add"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "revenant:rage/cooldown",
+                "change": -1600,
+                "operation": "add"
+            }
+        ]
+    },
+    "cooldown": 4800,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 1
+    },
+    "key": "secondary"
+}

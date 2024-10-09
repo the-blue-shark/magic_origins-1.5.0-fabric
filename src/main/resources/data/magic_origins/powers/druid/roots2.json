@@ -1,0 +1,40 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~.3 ~.2 ~.2 0 0 0 1 5 force"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~.3 ~.4 ~.3 0 0 0 1 5 force"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~.1 ~.8 ~.3 0 0 0 1 5 force"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~0 ~1 ~.3 0 0 0 1 5 force"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~-0.1 ~.2 ~-.1 0 0 0 1 5 force"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s at @e[distance=0.1..10,tag=druid_rooting] run particle dust 0.220 0.380 0.059 2 ~-0.1 ~ ~-.1 0 0 0 1 5 force"
+            }
+        ]
+    }
+}

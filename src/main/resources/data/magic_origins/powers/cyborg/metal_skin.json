@@ -1,0 +1,10 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "operation": "addition",
+        "value": 12,
+        "attribute": "generic.armor"
+    },
+    "name": "Metal Skin",
+    "description": "Strong skin, too strong to wear armor though "
+}

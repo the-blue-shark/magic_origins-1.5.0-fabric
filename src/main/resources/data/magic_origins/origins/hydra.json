@@ -1,0 +1,23 @@
+{
+    "name": "Hydra",
+    "description": "A wildren beast from Greek mythology.",
+    "powers": [
+        "magic_origins:hydra/heads",
+        "magic_origins:hydra/passive_head_powers",
+        "magic_origins:hydra/scales",
+        "magic_origins:hydra/no_fire_durability",
+        "magic_origins:hydra/fire_breath",
+        "magic_origins:hydra/ability_toggle",
+        "magic_origins:hydra/water_ray",
+        "magic_origins:hydra/poison_breath",
+        "magic_origins:hydra/wind_wave",
+        "magic_origins:hydra/helmet",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:scute",
+        "amount": 1
+    },
+    "order": 10,
+    "impact": 3
+}

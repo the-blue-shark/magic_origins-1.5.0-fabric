@@ -1,0 +1,23 @@
+{
+    "origins": [
+        "magic_origins:green_dragon",
+        "magic_origins:lilliputian",
+        "magic_origins:druid",
+        "magic_origins:magic_fly",
+        "magic_origins:red_dragon",
+        "magic_origins:cyborg",
+        "magic_origins:undead",
+        "magic_origins:cookie",
+        "magic_origins:necromancer",
+        "magic_origins:mimic",
+        "magic_origins:panda",
+        "magic_origins:kraken",
+        "magic_origins:pirate",
+        "magic_origins:yin",
+        "magic_origins:yang",
+        "magic_origins:lorax",
+        "magic_origins:hydra"
+    ],
+    "enabled": true,
+    "allow_random_unchoosable": true
+}

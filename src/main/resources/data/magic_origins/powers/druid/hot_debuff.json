@@ -1,0 +1,33 @@
+{
+    "name": "Dehydration",
+    "description": "When you are in hot biomes you start to dry up",
+    "condition": {
+        "type": "origins:biome",
+        "condition": {
+            "type": "origins:temperature",
+            "comparison": ">=",
+            "compare_to": 2
+        }
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 100,
+    "tick_rate": 10,
+    "effects": [
+        {
+            "effect": "minecraft:slowness",
+            "duration": 100,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": false
+        },
+        {
+            "effect": "minecraft:weakness",
+            "duration": 100,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ]
+}

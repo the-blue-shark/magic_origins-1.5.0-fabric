@@ -1,0 +1,18 @@
+{
+    "hidden": true,
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1600,
+    "start_value": 1600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 9,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "revenant:rage/cooldown",
+            "comparison": "<",
+            "compare_to": 1600
+        }
+    }
+}

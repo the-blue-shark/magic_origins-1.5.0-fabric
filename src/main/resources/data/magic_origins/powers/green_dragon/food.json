@@ -1,0 +1,11 @@
+{
+    "name": "Hungry \"Hippo\"",
+    "description": "You need to eat a lot of food",
+    "loading_priority": 7,
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "name": "Increased exhaustion",
+        "operation": "multiply_base",
+        "value": 1.5
+    }
+}

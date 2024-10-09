@@ -1,0 +1,218 @@
+{
+    "name": "Poison Breath",
+    "description": "Use the head of poison to release toxic gases",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger Poison Breath with %s"
+        },
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Trigger Poison Wall with [Save Hotbar Activator]"
+        }
+    ],
+    "type": "origins:multiple",
+    "poison_breath": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 5
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": ">=",
+                    "compare_to": 20
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 6,
+                    "block": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:poison",
+                                        "duration": 200,
+                                        "amplifier": 4,
+                                        "show_particles": true,
+                                        "show_icon": true
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "command_along_ray": "particle dust 0.820 1.000 0.459 1 ~ ~ ~ 0.820 1.000 0.459 .1 0 normal"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.cat.hiss",
+                    "volume": 0.3,
+                    "pitch": 0.75
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": -5,
+                    "operation": "add"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.saveToolbarActivator",
+            "continuous": true
+        }
+    },
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 600,
+        "start_value": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 19,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/heads_headcount",
+                        "comparison": ">=",
+                        "compare_to": 5
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/ability_toggle_current_ability",
+                        "comparison": "==",
+                        "compare_to": 4
+                    }
+                ]
+            }
+        }
+    },
+    "recharge": {
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hydra/ability_toggle_current_ability",
+                "comparison": "==",
+                "compare_to": 3
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 2,
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    },
+    "poison_wall": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 5
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 600
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": -600,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon armor_stand ~ ~ ~ {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:[\"poison_wall\"],CustomName:'{\"text\":\"Poison Wall\",\"color\":\"#C9FF5C\",\"bold\":true}'}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team add no_poison"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join no_poison @s"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "power grant @e[tag=poison_wall] magic_origins:hydra/poison_wall"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 900,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "kill @e[tag=poison_wall]"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 900,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "team leave @s"
+                    }
+                }
+            ]
+        },
+        "key": {
+            "key": "key.loadToolbarActivator",
+            "continuous": true
+        }
+    }
+}

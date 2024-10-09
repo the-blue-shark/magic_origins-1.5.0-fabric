@@ -1,0 +1,12 @@
+{
+    "name": "Rotting Body",
+    "description": "Due to your time in the grave your skin is pale and decompostion has weakened your body",
+    "loading_priority": 0,
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -2
+    },
+    "update_health": false
+}

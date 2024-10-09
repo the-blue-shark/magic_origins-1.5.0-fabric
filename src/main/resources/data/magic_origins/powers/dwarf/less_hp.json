@@ -1,0 +1,11 @@
+{
+    "name": "Weaker Bones",
+    "description": "You have less HP because you have weaker bones",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -8
+    },
+    "update_health": true
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Spit",
+    "description": "You can spit out the entity in your stomach back out just in case.",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:sand/sand_larvae/bite_resource",
+        "comparison": "==",
+        "compare_to": 2
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "*:sand/sand_larvae/bite_resource",
+                "change": 0,
+                "operation": "set"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tp @e[tag=biten] ~ ~ ~"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[tag=biten] minecraft:resistance 1 99 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect clear @e[tag=biten] minecraft:blindness"
+            },
+            {
+                "type": "origins:delay",
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @e remove biten"
+                },
+                "ticks": 20
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 0.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.llama.spit player @a[distance=0..10] ~ ~ ~"
+            }
+        ]
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "hidden": true,
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:durability",
+        "comparison": "==",
+        "compare_to": 1
+    }
+}

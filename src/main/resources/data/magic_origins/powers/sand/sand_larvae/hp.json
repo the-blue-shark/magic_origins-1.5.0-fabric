@@ -1,0 +1,11 @@
+{
+    "name": "Sand Creature",
+    "description": "You are small and fragile as a little worm.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -4
+    },
+    "update_health": true
+}

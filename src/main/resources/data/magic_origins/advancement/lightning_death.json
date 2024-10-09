@@ -1,0 +1,28 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Positively Charged",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "Be killed by your own lightning bolt",
+            "color": "yellow",
+            "italic": true
+        },
+        "icon": {
+            "item": "minecraft:lightning_rod"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "power": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "magic_origins:magic_origins_advancements_intro"
+}

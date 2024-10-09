@@ -1,0 +1,6 @@
+{
+    "name": "Undead",
+    "description": "You are one of the undead, this makes you weak towards some undead specific enchantments and potions",
+    "type": "origins:entity_group",
+    "group": "undead"
+}

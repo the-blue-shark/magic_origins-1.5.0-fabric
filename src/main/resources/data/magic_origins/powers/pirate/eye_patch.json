@@ -1,0 +1,7 @@
+{
+    "name": "Eye Patch",
+    "description": "Ye put on yer eyepatch t' adapt t' the dark.",
+    "type": "origins:toggle_night_vision",
+    "active_by_default": true,
+    "strength": 1
+}

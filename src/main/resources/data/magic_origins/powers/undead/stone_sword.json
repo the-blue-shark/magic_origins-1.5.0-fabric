@@ -1,0 +1,27 @@
+{
+    "name": "Withering",
+    "description": "You have learned the skill of withering as you are one with wither skeletons.",
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": [
+                {
+                    "item": "minecraft:stone_sword"
+                }
+            ]
+        }
+    },
+    "type": "origins:modify_damage_dealt",
+    "target_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "wither",
+            "duration": 300,
+            "amplifier": 1,
+            "show_particles": false,
+            "show_icon": false
+        }
+    }
+}

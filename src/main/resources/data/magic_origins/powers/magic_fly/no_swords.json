@@ -1,0 +1,23 @@
+{
+    "description": "The gods dont want magic flies to have sharp object, so sharpness is a deadly sin.",
+    "name": "Sharpness is a Sin",
+    "condition": {
+        "type": "origins:enchantment",
+        "enchantment": "sharpness",
+        "calculation": "sum",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 600,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "minecraft:wither",
+        "duration": 600,
+        "amplifier": 99,
+        "show_particles": false,
+        "show_icon": false
+    }
+}

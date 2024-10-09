@@ -1,0 +1,12 @@
+{
+    "name": "Forbidden Light",
+    "description": "Sunlight weakens your muscles.",
+    "condition": {
+        "type": "origins:exposed_to_sun"
+    },
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1.3
+    }
+}

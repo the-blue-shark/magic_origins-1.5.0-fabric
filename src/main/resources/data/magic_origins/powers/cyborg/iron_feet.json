@@ -1,0 +1,9 @@
+{
+    "name": "Iron Feet",
+    "description": "Falls will be caught with strong feet",
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+    }
+}

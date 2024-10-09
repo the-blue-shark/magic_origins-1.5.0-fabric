@@ -1,0 +1,217 @@
+{
+    "type": "origins:multiple",
+    "hidden": false,
+    "name": "Holy Strike",
+    "description": "Strike your enemies with powerfull beams from the sky that do damage and give slowness.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "text": "Trigger with %s!",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "activate": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_allow_power",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 7,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "summon minecraft:lightning_bolt ~ ~2 ~"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @e[distance=0.1..7] slowness 3 2"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.lightning_bolt.thunder hostile @a[distance=0..7] ~ ~ ~ 10000"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "toggle": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "toggle2": {
+        "hidden": true,
+        "type": "origins:toggle",
+        "key": "key.no"
+    },
+    "resource": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 15,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 2
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:toggle",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_recharge",
+                    "change": 1,
+                    "operation": "set"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:toggle",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_allow_power",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_recharge",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "allow_power": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9
+        }
+    },
+    "recharge": {
+        "hidden": true,
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9
+        }
+    },
+    "cooldown": {
+        "hidden": true,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_recharge",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "use_time": {
+        "type": "origins:action_over_time",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_allow_power",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        },
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:*_allow_power",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "inverted": true,
+                "type": "origins:power_active",
+                "power": "*:*_toggle"
+            }
+        ]
+    },
+    "immumity": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lightning"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0
+        }
+    }
+}

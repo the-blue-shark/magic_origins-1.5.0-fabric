@@ -1,0 +1,33 @@
+{
+    "name": "Marshmellow",
+    "description": "You have achieved the ability to make marshmallows.",
+    "badges": [
+        {
+            "type": "origins:crafting_recipe",
+            "recipe": {
+                "id": "minecraft:marshmellow",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    {
+                        "item": "minecraft:sugar"
+                    },
+                    {
+                        "item": "minecraft:sugar"
+                    }
+                ],
+                "result": {
+                    "item": "minecraft:sugar",
+                    "count": 2
+                }
+            },
+            "sprite": "minecraft:textures/item/marshmallow.png"
+        }
+    ],
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:marshmellow",
+    "result": {
+        "item": "minecraft:sugar",
+        "amount": 1,
+        "tag": "{display:{Name:'{\"text\":\"Marshmallow\",\"italic\":false}'},CustomModelData:690015}"
+    }
+}

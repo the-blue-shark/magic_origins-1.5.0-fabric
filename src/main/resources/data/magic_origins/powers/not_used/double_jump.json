@@ -1,0 +1,133 @@
+{
+    "name": "Double Jump",
+    "description": "Your light body allows you to propel yourself in the air for a second jump, it consumes energy though.",
+    "type": "origins:multiple",
+    "air": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_jumps",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:on_block"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:climbing"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:riding"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:swimming"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "creative"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "revenant:energy/energy",
+                    "change": -10,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_jumps",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:set_fall_distance",
+                    "fall_distance": 0
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:moving"
+                    },
+                    "if_action": {
+                        "type": "origins:add_velocity",
+                        "y": 0.45,
+                        "z": 0.35,
+                        "space": "local_horizontal",
+                        "client": true,
+                        "server": true
+                    },
+                    "else_action": {
+                        "type": "origins:add_velocity",
+                        "y": 0.5,
+                        "space": "local_horizontal",
+                        "client": true,
+                        "server": true
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.jump"
+        }
+    },
+    "jumps": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "reset": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "revenant:energy/energy",
+                    "comparison": ">",
+                    "compare_to": 9
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_jumps",
+                    "comparison": "<=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps",
+            "change": 1,
+            "operation": "add"
+        }
+    }
+}

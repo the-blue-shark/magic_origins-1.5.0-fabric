@@ -1,0 +1,21 @@
+{
+    "name": "Village Outlier",
+    "description": "Villagers and iron golems don't like you.",
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s as @e[type=minecraft:iron_golem,distance=..10] run data modify entity @s AngryAt set from entity @p[tag=Puppeteer] UUID",
+                "permission_level": 2
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s as @e[type=minecraft:iron_golem,distance=..10] run data modify entity @s AngerTime set value 60",
+                "permission_level": 2
+            }
+        ]
+    }
+}

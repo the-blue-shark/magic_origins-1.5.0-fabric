@@ -1,0 +1,39 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:area_of_effect",
+                "radius": 1.2,
+                "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:poison",
+                            "duration": 200,
+                            "amplifier": 4,
+                            "show_particles": true,
+                            "show_icon": true
+                        }
+                    }
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle dust 0.820 1.000 0.459 4 ~ ~0.5 ~ 0.820 1.000 0.459 1 0 normal"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle dust 0.820 1.000 0.459 4 ~ ~1.5 ~ 0.820 1.000 0.459 1 0 normal"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect clear @e[team=no_poison] minecraft:poison"
+            }
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Trustworthy",
+    "description": "Bad Omen is impossible to get",
+    "loading_priority": 3,
+    "type": "origins:effect_immunity",
+    "effect": "minecraft:bad_omen"
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Desert Home\n",
+    "description": "You spawn in the desert.",
+    "type": "origins:modify_player_spawn",
+    "dimension": "minecraft:overworld",
+    "biome": "minecraft:desert",
+    "spawn_strategy": "default",
+    "dimension_distance_multiplier": 1
+}

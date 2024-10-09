@@ -1,0 +1,22 @@
+{
+    "name": "Green dragon",
+    "description": "A well loved dragon by the villagers. He can only eat vegetables to keep his teeth glowing. Has big wings and needs a lot of food.",
+    "powers": [
+        "magic_origins:green_dragon/discount",
+        "magic_origins:green_dragon/green",
+        "magic_origins:green_dragon/elytra",
+        "magic_origins:green_dragon/unbad_omen",
+        "magic_origins:green_dragon/vegie",
+        "magic_origins:green_dragon/food",
+        "magic_origins:green_dragon/size",
+        "magic_origins:green_dragon/emerald",
+        "magic_origins:green_dragon/droar",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:emerald",
+        "amount": 1
+    },
+    "order": 10,
+    "impact": 3
+}

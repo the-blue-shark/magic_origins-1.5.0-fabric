@@ -1,0 +1,28 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "What's the matter with you!",
+            "color": "dark_gray",
+            "bold": false
+        },
+        "description": {
+            "text": "Stay in the dark matter state for too long",
+            "color": "dark_gray",
+            "italic": true
+        },
+        "icon": {
+            "item": "minecraft:black_concrete"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "power": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "magic_origins:magic_origins_advancements_intro"
+}

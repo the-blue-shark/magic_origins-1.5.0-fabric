@@ -1,0 +1,71 @@
+{
+    "name": "Mystic Elusion",
+    "description": "You are able to transcend into an invulnerable state for a short period of time to avoid upcoming attacks.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:nothing"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:resistance",
+                        "duration": 140,
+                        "amplifier": 255,
+                        "show_particles": false,
+                        "show_icon": true
+                    },
+                    {
+                        "effect": "minecraft:weakness",
+                        "duration": 140,
+                        "amplifier": 255,
+                        "show_particles": false,
+                        "show_icon": false
+                    },
+                    {
+                        "effect": "minecraft:speed",
+                        "duration": 140,
+                        "amplifier": 1,
+                        "show_particles": false,
+                        "show_icon": false
+                    },
+                    {
+                        "effect": "minecraft:invisibility",
+                        "duration": 40,
+                        "amplifier": 0,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                ]
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.zombie_villager.cure",
+                "volume": 1,
+                "pitch": 2
+            },
+            {
+                "type": "origins:spawn_particles",
+                "particle": "minecraft:campfire_signal_smoke",
+                "count": 30,
+                "speed": 0.3,
+                "spread": {
+                    "x": 0.2,
+                    "y": 0.5,
+                    "z": 0.2
+                },
+                "offset_y": 0
+            }
+        ]
+    },
+    "cooldown": 1800,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "key": "primary"
+}

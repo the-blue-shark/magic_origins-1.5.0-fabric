@@ -1,0 +1,26 @@
+{
+    "name": "Undead",
+    "description": "You have been ressurected as undead in a world full of humans.",
+    "powers": [
+        "magic_origins:undead/zombie",
+        "magic_origins:undead/daylight",
+        "magic_origins:undead/hugs",
+        "magic_origins:undead/body",
+        "magic_origins:undead/body_",
+        "magic_origins:undead/undead",
+        "magic_origins:undead/unnerving",
+        "magic_origins:undead/attacker",
+        "magic_origins:undead/target",
+        "magic_origins:undead/join_team",
+        "magic_origins:undead/create_team",
+        "magic_origins:undead/summon",
+        "magic_origins:undead/shovel",
+        "magic_origins:undead/stone_sword",
+        "magic_origins:advancement"
+    ],
+    "icon": {
+        "item": "minecraft:zombie_head",
+        "amount": 1
+    },
+    "impact": 2
+}

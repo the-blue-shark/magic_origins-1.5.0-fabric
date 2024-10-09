@@ -1,0 +1,23 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:power_active",
+        "power": "dragon_origins:mimic/toggle"
+    },
+    "type": "origins:and",
+    "actions": [
+        {
+            "type": "origins:invisibility",
+            "render_armor": false
+        },
+        {
+            "type": "origins:attribute",
+            "modifier": {
+                "attribute": "generic.movement_speed",
+                "operation": "multiply_base",
+                "value": 0
+            },
+            "update_health": true
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "name": "Smaller",
+    "description": "Your magic keeps you from being fly sized but are still smaller.",
+    "loading_priority": 8,
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set 0.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set true @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set pehkui:jump_height  true @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 2 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set pehkui:step_height true @s"
+            }
+        ]
+    },
+    "execute_chosen_when_orb": true,
+    "entity_action_lost": {
+        "type": "origins:execute_command",
+        "command": "scale reset @s"
+    },
+    "entity_action_respawned": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set 0.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set true @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set pehkui:jump_height  true @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 2 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale persist set pehkui:step_height true @s"
+            }
+        ]
+    }
+}

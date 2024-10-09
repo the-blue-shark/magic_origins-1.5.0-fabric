@@ -1,0 +1,31 @@
+{
+    "name": "Spillage",
+    "description": "Stun your enemies by spilling your dough everywhere.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "playsound block.wart_block.break master @a[distance=0..5]"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=0.1..5] slowness 10 99"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=0.1..5] nausea 10 99"
+            }
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 4
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "file_": {
+        "hidden": true,
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 1,
+        "max_stacks": 2,
+        "duration_per_stack": 20,
+        "tick_rate": 20,
+        "effect": {
+            "effect": "weakness",
+            "duration": 20,
+            "amplifier": 1,
+            "show_particles": false,
+            "show_icon": false
+        }
+    },
+    "sound": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle ambient_entity_effect ~ ~1 ~ 0.780 0.082 0.031 1 200 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:block.chest.locked master @a[distance=0..25]"
+                }
+            ]
+        },
+        "key": "key.origins.primary_active"
+    },
+    "hello": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -8
+        },
+        "update_health": true
+    }
+}

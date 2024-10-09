@@ -1,0 +1,24 @@
+{
+    "name": "Speed Boost",
+    "description": "Every 30 seconds you can activate a 3 minute speed boost after cooldown",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:speed",
+            "duration": 3600,
+            "amplifier": 20,
+            "show_particles": false,
+            "show_icon": true
+        }
+    },
+    "cooldown": 4200,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 2
+    },
+    "key": {
+        "key": "key.loadToolbarActivator",
+        "continuous": false
+    }
+}

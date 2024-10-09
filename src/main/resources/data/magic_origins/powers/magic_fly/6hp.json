@@ -1,0 +1,11 @@
+{
+    "name": "Less HP",
+    "description": "You have less HP because you are smaller.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -8
+    },
+    "update_health": true
+}

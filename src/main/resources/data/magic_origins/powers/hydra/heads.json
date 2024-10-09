@@ -1,0 +1,265 @@
+{
+    "name": "Hydra Heads",
+    "description": "When a head is cut off, two are grown from the stump.",
+    "loading_priority": 1,
+    "type": "origins:multiple",
+    "head": {
+        "type": "origins:starting_equipment",
+        "stack": {
+            "item": "minecraft:leather_helmet",
+            "amount": 1,
+            "tag": "{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]}",
+            "slot": "39"
+        },
+        "recurrent": false
+    },
+    "fire": {
+        "type": "origins:simple"
+    },
+    "regrow-time": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_headcount",
+                    "change": 2,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/item replace entity @s armor.head with leather_helmet{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]} 1"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_headcount",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        }
+    },
+    "regrow-time-timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 60,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 15,
+            "condition": {
+                "inverted": true,
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_regrow-time-timer",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_regrow-time-timer",
+                        "comparison": "==",
+                        "compare_to": 60
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time-timer",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "regrow-time-counter": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_regrow-time",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_regrow-time-timer",
+            "change": 1,
+            "operation": "add"
+        }
+    },
+    "headcheck": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:durability",
+                        "comparison": "<=",
+                        "compare_to": 5
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_regrow-time",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "item replace entity @s armor.head with leather_helmet{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]} 1"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time",
+                    "change": 2,
+                    "operation": "set"
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "headcount": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 9,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 14
+        }
+    },
+    "dead_reset": {
+        "type": "origins:action_on_death",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_headcount",
+                            "change": 0,
+                            "operation": "set"
+                        },
+                        "ticks": 20
+                    }
+                ]
+            }
+        }
+    },
+    "dead": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:nbt",
+                        "nbt": "{display:{Name:'{\"text\":\"Head\"}',Lore:['{\"text\":\"This item is used as a placeholder to track if your head is cut off or not.\",\"color\":\"gold\",\"italic\":true}','{\"text\":\"If you have this and you do not have the hydra origin then you did something severely wrong!\",\"color\":\"gold\",\"italic\":true}'],color:746272},HideFlags:65,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]}"
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:resource",
+                    "resource": "*:*_regrow-time",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_headcount",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "unintentional_burn": {
+        "condition": {
+            "type": "origins:and", 
+            "conditions": [
+            {
+            "type": "origins:resource",
+            "resource": "*:*_regrow-time",
+            "comparison": "==",
+            "compare_to": 2
+            },
+            {
+            "type": "origins:on_fire"
+            }
+        ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time-timer",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_regrow-time",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_headcount",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Lilliputian",
+    "description": "You feel like you are in a world of giants.",
+    "powers": [
+        "magic_origins:dwarf/size",
+        "magic_origins:dwarf/haste",
+        "magic_origins:dwarf/less_hp",
+        "magic_origins:dwarf/stamina/sugar",
+        "magic_origins:slow",
+        "magic_origins:advancement",
+        "origins:no_shield",
+        "origins:fall_immunity",
+        "origins:climbing"
+    ],
+    "icon": {
+        "item": "minecraft:cobblestone",
+        "amount": 1
+    },
+    "impact": 3
+}

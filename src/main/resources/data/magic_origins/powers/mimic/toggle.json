@@ -1,0 +1,110 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "stand_still": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "chest_kill": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:active_self",
+        "hidden": true,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute align xyz run summon block_display ~ ~ ~ {Tags:[\"mimmic_chest\"],block_state:{Name:\"minecraft:trapped_chest\"}}"
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "chest_summon": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:active_self",
+        "hidden": true,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "kill @e[type=block_display,tag=mimmic_chest]"
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "file__": {
+        "condition": {
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type": "origins:toggle",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "cooldown": 1
+    },
+    "uppon_hit": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:action_when_damage_taken",
+        "hidden": true,
+        "entity_action": {
+            "type": "origins:toggle",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "cooldown": 1
+    },
+    "uppon_hit2": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:power_active",
+            "power": "magic_origins:mimic/toggle_toggle"
+        },
+        "type": "origins:action_when_damage_taken",
+        "hidden": true,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "kill @e[type=block_display,tag=mimmic_chest]"
+        },
+        "cooldown": 1
+    },
+    "invis": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:power_active",
+                    "power": "magic_origins:mimic/toggle_toggle"
+                }
+            ]
+        },
+        "type": "origins:invisibility",
+        "render_armor": false
+    },
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": false
+        },
+        "retain_state": true
+    }
+}

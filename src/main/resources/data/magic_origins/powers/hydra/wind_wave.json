@@ -1,0 +1,124 @@
+{
+    "name": "Wind Whirl",
+    "description": "Use the head of wind to blow enemies away.",
+    "type": "origins:multiple",
+    "push": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/heads_headcount",
+                    "comparison": ">=",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:hydra/ability_toggle_current_ability",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 120
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 5,
+                    "bientity_action": {
+                        "type": "origins:damage",
+                        "amount": 2,
+                        "source": {
+                            "name": "wind_whirl"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 5,
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "y": 0.5,
+                        "z": 1,
+                        "client": true,
+                        "server": true
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.player.breath player @s ~ ~ ~ 1 1.2"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_cooldown",
+                    "change": -120,
+                    "operation": "add"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.loadToolbarActivator"
+        }
+    },
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 120,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "minecraft:textures/bar/custom.png",
+            "bar_index": 20,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/heads_headcount",
+                        "comparison": ">=",
+                        "compare_to": 2
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:hydra/ability_toggle_current_ability",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                ]
+            }
+        }
+    },
+    "recharge": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hydra/ability_toggle_current_ability",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 2,
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "change": 1,
+                "operation": "add"
+            }
+        }
+    }
+}

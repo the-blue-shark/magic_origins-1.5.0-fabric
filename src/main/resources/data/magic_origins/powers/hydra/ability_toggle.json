@@ -1,0 +1,353 @@
+{
+    "name": "Ability Toggle",
+    "description": "Use elemental powers with energy gained over time.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Switch clockwise with [Active Power (Secondary)]"
+        },
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Switch counter clockwise with %s!"
+        }
+    ],
+    "type": "origins:multiple",
+    "counter_clockwise": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 4
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Fire Breath\",\"color\":\"#9C0505\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 3,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 3
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Water Ray\",\"color\":\"#1E5D9C\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 2,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 2
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Wind Whirl\",\"color\":\"#BFBFBF\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 1,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 5
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Poison Breath\",\"color\":\"#9DC944\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 4,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "clockwise": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 4
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Fire Breath\",\"color\":\"#9C0505\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 3,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 3
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Water Ray\",\"color\":\"#1E5D9C\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 2,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 2
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Gust of Wind\",\"color\":\"#BFBFBF\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 1,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_current_ability",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "magic_origins:hydra/heads_headcount",
+                                            "comparison": ">=",
+                                            "compare_to": 5
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar [{\"text\":\"Selected \"},{\"text\":\"Poison Breath\",\"color\":\"#9DC944\",\"bold\":true}]"
+                                        },
+                                        "else_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "title @s actionbar {\"text\":\"You haven't unlocked this power yet!\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:change_resource",
+                                        "resource": "*:*_current_ability",
+                                        "change": 4,
+                                        "operation": "set"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "current_ability": {
+        "type": "origins:resource",
+        "min": 1,
+        "max": 4,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "max_action": {
+            "type": "origins:modify_resource",
+            "resource": "*:*_current_ability",
+            "modifier": {
+                "operation": "set_total",
+                "value": 0,
+                "resource": "*:*_current_ability"
+            }
+        }
+    }
+}
