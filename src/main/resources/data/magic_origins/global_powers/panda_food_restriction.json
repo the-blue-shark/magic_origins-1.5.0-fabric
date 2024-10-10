@@ -1,0 +1,8 @@
+{
+  "entity_types": [
+    "minecraft:player"
+  ],
+  "powers": [
+    "magic_origins:panda_food_restriction"
+  ]
+}
