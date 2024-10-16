@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "id": "minecraft:honey_bottle",
+    "components": {
+      "minecraft:custom_model_data": 6900152,
+      "minecraft:custom_name": "Glazed Bamboo"
+    }
+  }
+}
