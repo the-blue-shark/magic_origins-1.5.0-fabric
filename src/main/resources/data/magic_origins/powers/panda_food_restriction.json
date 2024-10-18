@@ -1,0 +1,24 @@
+{
+  "name": "Eww bamboo!",
+  "hidden": true,
+  "condition": {
+    "inverted": true,
+    "type": "origins:origin",
+    "origin": "magic_origins:panda"
+  },
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:all_of",
+    "conditions": [
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "magic_origins:panda_food"
+        }
+      },
+      {
+        "type": "origins:food"
+      }
+    ]
+  }
+}

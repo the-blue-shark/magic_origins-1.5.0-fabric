@@ -1,10 +1,7 @@
 package net.the_blue_shark;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-
 
 public class MagicOriginsClient implements ClientModInitializer {
     private static KeyBinding keyBinding;

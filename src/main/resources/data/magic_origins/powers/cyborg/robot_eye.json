@@ -1,6 +1,6 @@
 {
     "name": "Robot Eye",
-    "description": "See in the dark with improved vision",
+    "description": "See in the dark with infrared vision",
     "type": "origins:night_vision",
     "strength": 0.4,
     "condition": {

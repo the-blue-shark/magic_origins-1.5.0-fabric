@@ -1,0 +1,20 @@
+{
+  "name": "Bamboo Diet",
+  "description": "You can only eat bamboo or bamboo based food.",
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:all_of",
+    "conditions": [
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "magic_origins:panda_food"
+        },
+        "inverted": true
+      },
+      {
+        "type": "origins:food"
+      }
+    ]
+  }
+}

@@ -8,6 +8,10 @@
   "death.attack.tentacle": "%1$s was strangled to death by the kraken's tentacles",
 
   "item.magic_origins.bamboo_sandwich": "Bamboo Sandwich",
+  "item.magic_origins.golden_bamboo": "Golden Bamboo",
+  "item.magic_origins.bamboo_golden_apple": "Bamboo Pierced Golden Apple",
+  "item.magic_origins.enchanted_bamboo_golden_apple": "Enchanted Bamboo Pierced Golden Apple",
+
   "item.magic_origins.magic_origins_icon": "Magic Origins Icon",
   "itemgroup.magic_origins.magic_origins_items": "Magic Origins"
 }

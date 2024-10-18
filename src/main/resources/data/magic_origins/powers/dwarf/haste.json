@@ -1,6 +1,6 @@
 {
-    "name": "Too much energy",
-    "description": "When your sugar levels are high you mine faster.",
+    "name": "Miner's Blood",
+    "description": "Gives Haste 3 when you are fully healed",
     "loading_priority": 2,
     "condition": {
         "type": "origins:health",
@@ -15,7 +15,7 @@
     "effect": {
         "effect": "minecraft:haste",
         "duration": 100,
-        "amplifier": 1,
+        "amplifier": 2,
         "show_particles": false,
         "show_icon": false
     }

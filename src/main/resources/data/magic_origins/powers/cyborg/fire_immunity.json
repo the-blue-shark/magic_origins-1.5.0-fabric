@@ -1,5 +1,5 @@
 {
-    "type": "origins:multiple",
+    "type": "origins:fire_immunity",
     "name": "Metal Body",
-    "description": "Your body is immune to fire damage for a short time, until you start to melt."
+    "description": "Your body is immune to fire damage"
 }

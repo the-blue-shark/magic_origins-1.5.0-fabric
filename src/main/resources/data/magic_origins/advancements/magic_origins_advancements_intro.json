@@ -12,7 +12,8 @@
             "italic": true
         },
         "icon": {
-            "item": "magic_origins:magic_origins_icon"
+            "item": "minecraft:sugar",
+            "nbt": "{CustomModelData:6900151}"
         },
         "frame": "task",
         "show_toast": false,

@@ -1,43 +1,43 @@
 {
-	"schemaVersion": 1,
-	"id": "magic_origins",
-	"version": "${version}",
-	"name": "Magic Origins",
-	"description": "Adds a lot of fun cool origins.",
-	"authors": [
-		"the_blue_shark"
-	],
-	"contributors": [
-		"FlashEvy"
-	],
-	"contact": {
-		"homepage": "",
-		"sources": ""
-	},
-	"license": "All Rights Reserved",
-	"icon": "assets/magic_origins/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"net.the_blue_shark.MagicOrigins"
-		],
-		"client": [
-			"net.the_blue_shark.MagicOriginsClient"
-		],
-		"fabric-datagen": [
-			"net.the_blue_shark.MagicOriginsDataGenerator"
-		]
-	},
-	"mixins": [
-		"magic_origins.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": ">=1.21.1",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "magic_origins",
+  "version": "${version}",
+  "name": "Magic Origins",
+  "description": "Adds a lot of fun cool origins.",
+  "authors": [
+    "the_blue_shark"
+  ],
+  "contributors": [
+    "FlashEvy"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "All Rights Reserved",
+  "icon": "assets/magic_origins/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.the_blue_shark.MagicOrigins"
+    ],
+    "client": [
+      "net.the_blue_shark.MagicOriginsClient"
+    ],
+    "fabric-datagen": [
+      "net.the_blue_shark.MagicOriginsDataGenerator"
+    ]
+  },
+  "mixins": [
+    "magic_origins.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "=1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

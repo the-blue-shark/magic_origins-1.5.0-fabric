@@ -1,0 +1,15 @@
+{
+    "hidden": true,
+    "type": "origins:edible_item",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:bamboo"
+        }
+    },
+    "food_component": {
+        "nutrition": 1,
+        "saturation": 0.0
+    },
+    "consume_animation": "eat"
+}

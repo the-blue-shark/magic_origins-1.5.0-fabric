@@ -1,6 +1,6 @@
 {
-    "name": "Lilliputian",
-    "description": "You feel like you are in a world of giants.",
+    "name": "Dwarf",
+    "description": "Little dwarf good for mining and combat.",
     "powers": [
         "magic_origins:dwarf/size",
         "magic_origins:dwarf/haste",

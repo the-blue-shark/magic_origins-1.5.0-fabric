@@ -2,7 +2,10 @@ package net.the_blue_shark.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
+import net.the_blue_shark.item.ModItems;
+import net.the_blue_shark.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,5 +16,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(ModTags.Items.PANDA_FOOD)
+                .add(ModItems.BAMBOO_SANDWICH)
+                .add(ModItems.BAMBOO_GOLDEN_APPLE)
+                .add(ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE)
+                .add(ModItems.GOLDEN_BAMBOO)
+                .add(ModItems.GLAZED_BAMBOO)
+                .add(Items.BAMBOO)
+
+        ;
     }
 }
