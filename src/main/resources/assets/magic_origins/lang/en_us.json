@@ -13,5 +13,9 @@
   "item.magic_origins.enchanted_bamboo_golden_apple": "Enchanted Bamboo Pierced Golden Apple",
 
   "item.magic_origins.magic_origins_icon": "Magic Origins Icon",
-  "itemgroup.magic_origins.magic_origins_items": "Magic Origins"
+  "itemgroup.magic_origins.magic_origins_items": "Magic Origins",
+
+  "limb.applicator.blockentity.displayname": "Limb Applicator",
+
+  "block.magic_origins.limb_applicator": "Limb Applicator"
 }

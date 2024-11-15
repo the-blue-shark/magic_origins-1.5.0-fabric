@@ -1,19 +1,12 @@
 {
     "name": "Cyborg",
-    "description": "Half-man, Half-robot. New abilities and more improved than humans.",
+    "description": "Half-man, Half-robot. Customize yourself.",
     "powers": [
-        "magic_origins:cyborg/metal_skin",
-        "magic_origins:cyborg/circuits",
-        "magic_origins:cyborg/jump",
-        "magic_origins:cyborg/fire_immunity",
-        "magic_origins:cyborg/metal_skin_no_armor",
-        "magic_origins:cyborg/iron_feet",
-        "magic_origins:cyborg/robot_eye",
+        "magic_origins:cyborg/metal_limbs",
         "magic_origins:advancement"
     ],
     "icon": {
-        "item": "minecraft:redstone",
-        "amount": 1
+        "id": "minecraft:redstone"
     },
     "impact": 2
 }
