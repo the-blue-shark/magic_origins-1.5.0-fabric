@@ -11,11 +11,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.the_blue_shark.MagicOrigins;
+import net.the_blue_shark.block.custom.LimbApplicatorBlock;
 
 public class ModBlocks {
 
     public static final Block LIMB_APPLICATOR = registerBlock("limb_applicator",
-            new Block(AbstractBlock.Settings.create()));
+            new LimbApplicatorBlock(AbstractBlock.Settings.create()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
