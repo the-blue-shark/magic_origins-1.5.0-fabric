@@ -25,5 +25,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.BAMBOO)
 
         ;
+
+        getOrCreateTagBuilder(ModTags.Items.NEUTRAL_FOOD)
+                .add(Items.OMINOUS_BOTTLE)
+
+        ;
     }
 }

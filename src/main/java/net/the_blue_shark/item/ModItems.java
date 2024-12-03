@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.the_blue_shark.MagicOrigins;
 import net.the_blue_shark.item.custom.BambooLickingItem;
 import net.the_blue_shark.item.custom.EnchantedItem;
+import net.the_blue_shark.item.custom.SniperItem;
 
 public class ModItems {
     public static final Item BAMBOO_SANDWICH = registerItem("bamboo_sandwich",
@@ -30,6 +31,21 @@ public class ModItems {
     public static final Item MAGIC_ORIGINS_ICON = registerItem("magic_origins_icon",
             new Item(new Item.Settings()));
 
+    public static final Item BAMBOO_SNIPER = registerItem("bamboo_sniper",
+            new SniperItem(new Item.Settings().maxDamage(200)));
+
+    public static final Item TIPPED_DART = registerItem("tipped_dart",
+            new TippedArrowItem(new Item.Settings()));
+
+    public static final Item DART = registerItem("dart",
+            new ArrowItem(new Item.Settings()));
+
+
+
+
+
+
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MagicOrigins.MOD_ID, name), item);
     }
@@ -45,10 +61,17 @@ public class ModItems {
 
     }
 
+    private static void itemGroupCombat(FabricItemGroupEntries entries) {
+        entries.add(ModItems.BAMBOO_SNIPER);
+        entries.add(ModItems.DART);
+        entries.add(ModItems.TIPPED_DART);
+    }
+
     public static void registerModItems() {
         MagicOrigins.LOGGER.info("Registering Mod Items for " + MagicOrigins.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItems::itemGroupNatural);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::itemGroupFoodAndDrink);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::itemGroupCombat);
     }
 }

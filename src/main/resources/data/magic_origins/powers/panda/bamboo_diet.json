@@ -14,6 +14,13 @@
       },
       {
         "type": "origins:food"
+      },
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "magic_origins:neutral_food"
+        },
+        "inverted": true
       }
     ]
   }

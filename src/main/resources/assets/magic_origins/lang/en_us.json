@@ -9,8 +9,12 @@
 
   "item.magic_origins.bamboo_sandwich": "Bamboo Sandwich",
   "item.magic_origins.golden_bamboo": "Golden Bamboo",
+  "item.magic_origins.glazed_bamboo": "Glazed Bamboo",
   "item.magic_origins.bamboo_golden_apple": "Bamboo Pierced Golden Apple",
   "item.magic_origins.enchanted_bamboo_golden_apple": "Enchanted Bamboo Pierced Golden Apple",
+  "item.magic_origins.dart": "Bamboo Dart",
+  "item.magic_origins.tipped_dart": "Tipped Bamboo Dart",
+  "item.magic_origins.bamboo_sniper": "Bamboo Blowpipe",
 
   "item.magic_origins.magic_origins_icon": "Magic Origins Icon",
   "itemgroup.magic_origins.magic_origins_items": "Magic Origins",

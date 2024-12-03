@@ -27,6 +27,10 @@ public class ModItemGroups {
                         entries.add(ModItems.BAMBOO_GOLDEN_APPLE);
                         entries.add(ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE);
 
+                        entries.add(ModItems.BAMBOO_SNIPER);
+                        entries.add(ModItems.DART);
+                        entries.add(ModItems.TIPPED_DART);
+
                     }).build());
 
 

@@ -1,11 +1,15 @@
 {
-	"required": true,
-	"package": "net.the_blue_shark.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"PlayerEntityRendererMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "net.the_blue_shark.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "AbstractClientPlayerEntityMixin",
+    "InGameHudMixin"
+  ]
 }

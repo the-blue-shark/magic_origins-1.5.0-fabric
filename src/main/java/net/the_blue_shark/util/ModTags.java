@@ -17,6 +17,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> PANDA_FOOD = createTag("panda_food");
+        public static final TagKey<Item> NEUTRAL_FOOD = createTag("neutral_food");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MagicOrigins.MOD_ID, name));
