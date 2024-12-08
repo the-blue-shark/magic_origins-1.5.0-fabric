@@ -1,6 +1,9 @@
-// 1.21.1	2024-10-17T00:31:06.3203379	Magic Origins/Model Definitions
+// 1.21.1	2024-12-04T23:32:43.6872688	Magic Origins/Model Definitions
 0ef2c0cb5b8198a9c82e305893660507f36ed078 assets\magic_origins\models\item\bamboo_golden_apple.json
 6d53744325644ef6658b5f06d749a027ef818c5f assets\magic_origins\models\item\magic_origins_icon.json
 be73cc178a30cdcfd025a54810267438681498a2 assets\magic_origins\models\item\bamboo_sandwich.json
+4380e4c5391c5312c4618faff4497d6665373d6e assets\magic_origins\models\item\dart.json
+869e3bcafb0d7ece9e51b91041f018bb891a4845 assets\magic_origins\models\item\tipped_dart.json
 da37bde3a1ffa66d7d0dfb3f720a9b2aeec31560 assets\magic_origins\models\item\golden_bamboo.json
 1d044a3fa40be0629f4524f1b66e74ac299a0ef5 assets\magic_origins\models\item\glazed_bamboo.json
+0b95bee90d5f3cfbc977528abc94c4bafa92505b assets\magic_origins\models\item\bamboo_sniper.json

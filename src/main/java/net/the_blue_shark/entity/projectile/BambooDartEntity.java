@@ -4,7 +4,11 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.PotionContentsComponent;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -45,7 +49,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static io.github.apace100.apoli.Apoli.server;
+import static net.minecraft.enchantment.Enchantments.FLAME;
 
 public class BambooDartEntity extends PersistentProjectileEntity {
 
@@ -60,7 +64,9 @@ public class BambooDartEntity extends PersistentProjectileEntity {
         double d1 = (double)blockpos.getY() + 1.75D;
         double d2 = (double)blockpos.getZ() + 0.5D;
         this.refreshPositionAndAngles(d0, d1, d2, this.getYaw(), this.getPitch());
+
     }
+
 
     @Override
     public void tick() {

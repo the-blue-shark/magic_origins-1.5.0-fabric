@@ -2,6 +2,7 @@ package net.the_blue_shark.item.custom;
 
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.annotation.Nullable;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -13,6 +14,7 @@ import net.minecraft.item.ArrowItem;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -41,7 +43,6 @@ public class SniperItem extends BowItem {
                 int i = this.getMaxUseTime(stack, user) - remainingUseTicks;
                 float f = getPullProgress(i);
 
-                // Ensure shooting only occurs if fully charged
                 if (f >= 1.0F) {
                     List<ItemStack> list = load(stack, itemStack, playerEntity);
                     if (world instanceof ServerWorld serverWorld && !list.isEmpty()) {
@@ -59,24 +60,21 @@ public class SniperItem extends BowItem {
                             2
                     );
                     playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
+                    
                 }
             }
         }
     }
-
     @Override
     protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
         BambooDartEntity bambooDartEntity = new BambooDartEntity(world, (PlayerEntity) shooter);
-        bambooDartEntity.setPos(
-                shooter.getX(),         // Middle of the shooter's X-coordinate
-                shooter.getEyeY(),
-                shooter.getZ()
+        bambooDartEntity.setPos(shooter.getX(), shooter.getEyeY(), shooter.getZ()
         );
         if (critical) {
             bambooDartEntity.setCritical(true);
         }
 
-        bambooDartEntity.setVelocity(shooter, shooter.getPitch(), shooter.getYaw(), 0.0F, 8.0F, 0.0F);
+        bambooDartEntity.setVelocity(shooter, shooter.getPitch(), shooter.getYaw(), 0.0F, 4.0F, 0.0F);
 
         return bambooDartEntity;
     }
@@ -84,10 +82,7 @@ public class SniperItem extends BowItem {
     @Override
     protected void shoot(LivingEntity shooter, ProjectileEntity projectile, int index, float speed, float divergence, float yaw, @Nullable LivingEntity target) {
         if (projectile instanceof BambooDartEntity bamboodart) {
-            // Set the velocity for the WindChargeEntity
             bamboodart.setVelocity(shooter, shooter.getPitch(), shooter.getYaw() + yaw, 0.0F, speed, divergence);
-
-            // You can add additional logic for WindChargeEntity here (e.g., apply explosion behaviors)
         }
     }
 

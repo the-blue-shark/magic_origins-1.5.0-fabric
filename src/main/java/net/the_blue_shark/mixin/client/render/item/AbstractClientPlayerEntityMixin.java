@@ -1,4 +1,4 @@
-package net.the_blue_shark.mixin;
+package net.the_blue_shark.mixin.client.render.item;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(AbstractClientPlayerEntity.class)
-public class AbstractClientPlayerEntityMixin extends PlayerEntity {
+public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
     public AbstractClientPlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
         super(world, pos, yaw, gameProfile);
     }

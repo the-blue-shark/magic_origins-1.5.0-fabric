@@ -1,6 +1,0 @@
-{
-  "parent": "magic_origins:item/bamboo_sniper",
-  "textures": {
-    "layer0": "magic_origins:item/bamboo_sniper_pulling_2"
-  }
-}

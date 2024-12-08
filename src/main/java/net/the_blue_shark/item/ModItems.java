@@ -54,17 +54,17 @@ public class ModItems {
 
     }
     private static void itemGroupFoodAndDrink(FabricItemGroupEntries entries) {
-        entries.add(BAMBOO_SANDWICH);
-        entries.add(ModItems.GOLDEN_BAMBOO);
-        entries.add(ModItems.BAMBOO_GOLDEN_APPLE);
-        entries.add(ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE);
+        entries.addAfter(Items.BREAD, BAMBOO_SANDWICH);
+        entries.addAfter(Items.GOLDEN_CARROT,ModItems.GOLDEN_BAMBOO);
+        entries.addAfter(Items.GOLDEN_APPLE, ModItems.BAMBOO_GOLDEN_APPLE);
+        entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE);
 
     }
 
     private static void itemGroupCombat(FabricItemGroupEntries entries) {
-        entries.add(ModItems.BAMBOO_SNIPER);
-        entries.add(ModItems.DART);
-        entries.add(ModItems.TIPPED_DART);
+        entries.addAfter(Items.BOW, ModItems.BAMBOO_SNIPER);
+        entries.addAfter(Items.ARROW, ModItems.DART);
+        entries.addAfter(Items.TIPPED_ARROW,ModItems.TIPPED_DART);
     }
 
     public static void registerModItems() {
