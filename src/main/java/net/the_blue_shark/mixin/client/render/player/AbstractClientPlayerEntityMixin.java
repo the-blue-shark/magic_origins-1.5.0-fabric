@@ -1,4 +1,4 @@
-package net.the_blue_shark.mixin.client.render.item;
+package net.the_blue_shark.mixin.client.render.player;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;

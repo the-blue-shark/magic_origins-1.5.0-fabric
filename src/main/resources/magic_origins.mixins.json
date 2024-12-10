@@ -8,7 +8,8 @@
     "defaultRequire": 1
   },
   "client": [
-    "client.render.item.AbstractClientPlayerEntityMixin",
+    "client.render.player.AbstractClientPlayerEntityMixin",
+    "client.render.player.InGameHudMixin",
     "client.render.item.ItemRendererMixin",
     "client.render.item.ModelLoaderMixin"
   ]

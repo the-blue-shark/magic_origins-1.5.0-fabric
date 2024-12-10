@@ -1,5 +1,7 @@
 package net.the_blue_shark.item.custom;
 
+import io.github.apace100.apoli.component.PowerHolderComponent;
+import io.github.apace100.origins.Origins;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.annotation.Nullable;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -43,14 +45,14 @@ public class SniperItem extends BowItem {
                 int i = this.getMaxUseTime(stack, user) - remainingUseTicks;
                 float f = getPullProgress(i);
 
-                if (f >= 1.0F) {
+                if (f >= 1.0F ) {
                     List<ItemStack> list = load(stack, itemStack, playerEntity);
                     if (world instanceof ServerWorld serverWorld && !list.isEmpty()) {
                         this.shootAll(serverWorld, playerEntity, playerEntity.getActiveHand(), stack, list, 4.0F, 1.0F, true, null);
                     }
 
                     world.playSound(
-                            null,
+                            playerEntity,
                             playerEntity.getX(),
                             playerEntity.getY(),
                             playerEntity.getZ(),

@@ -56,15 +56,17 @@ public class ModItems {
     private static void itemGroupFoodAndDrink(FabricItemGroupEntries entries) {
         entries.addAfter(Items.BREAD, BAMBOO_SANDWICH);
         entries.addAfter(Items.GOLDEN_CARROT,ModItems.GOLDEN_BAMBOO);
-        entries.addAfter(Items.GOLDEN_APPLE, ModItems.BAMBOO_GOLDEN_APPLE);
-        entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE);
+        entries.addAfter(ModItems.GOLDEN_BAMBOO, Items.BAMBOO);
+        entries.addAfter(Items.BAMBOO, ModItems.GLAZED_BAMBOO);
+        entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, ModItems.BAMBOO_GOLDEN_APPLE);
+        entries.addAfter(ModItems.BAMBOO_GOLDEN_APPLE, ModItems.ENCHANTED_BAMBOO_GOLDEN_APPLE);
 
     }
 
     private static void itemGroupCombat(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.BOW, ModItems.BAMBOO_SNIPER);
-        entries.addAfter(Items.ARROW, ModItems.DART);
-        entries.addAfter(Items.TIPPED_ARROW,ModItems.TIPPED_DART);
+        entries.addAfter(Items.WIND_CHARGE, ModItems.BAMBOO_SNIPER);
+        entries.addAfter(ModItems.BAMBOO_SNIPER, ModItems.DART);
+        entries.addAfter(ModItems.DART,ModItems.TIPPED_DART);
     }
 
     public static void registerModItems() {
