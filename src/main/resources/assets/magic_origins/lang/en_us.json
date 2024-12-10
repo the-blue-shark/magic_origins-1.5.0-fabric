@@ -21,5 +21,10 @@
 
   "limb.applicator.blockentity.displayname": "Limb Applicator",
 
-  "block.magic_origins.limb_applicator": "Limb Applicator"
+  "block.magic_origins.limb_applicator": "Limb Applicator",
+
+  "bamboo_sniper.fail.one": "You are not blowing hard enough!",
+  "bamboo_sniper.fail.two": "A bit to the left.",
+  "bamboo_sniper.fail.three": "... even a panda can do better.",
+  "bamboo_sniper.mr_panda": "Panda Sensei"
 }
