@@ -2,6 +2,7 @@ package net.the_blue_shark;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.util.Identifier;
 import net.the_blue_shark.effect.ModEffects;
 import net.the_blue_shark.entity.ModEntities;
 import net.the_blue_shark.item.ModItemGroups;
@@ -18,10 +19,13 @@ public class MagicOrigins implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
-		ModEffects.registerModEffects();
 		ModEntities.registerModEntities();
 		ModPowerTypes.register();
 
 		LOGGER.info("Magic Origins has successfully initialized!");
+	}
+
+	public static Identifier identifier(String path) {
+		return Identifier.of(MOD_ID, path);
 	}
 }

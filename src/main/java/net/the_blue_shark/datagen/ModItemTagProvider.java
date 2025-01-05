@@ -30,5 +30,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.OMINOUS_BOTTLE)
 
         ;
+
+        getOrCreateTagBuilder(ModTags.Items.BAMBOO_DARTS)
+                .add(ModItems.DART)
+                .add(ModItems.TIPPED_DART)
+
+        ;
     }
 }

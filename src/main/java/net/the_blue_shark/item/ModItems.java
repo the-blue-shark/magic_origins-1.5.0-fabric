@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.the_blue_shark.MagicOrigins;
+import net.the_blue_shark.item.custom.BambooBlowpipeItem;
 import net.the_blue_shark.item.custom.BambooLickingItem;
 import net.the_blue_shark.item.custom.EnchantedItem;
 import net.the_blue_shark.item.custom.SniperItem;

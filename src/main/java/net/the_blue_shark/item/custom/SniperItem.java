@@ -8,14 +8,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.HoverEvent;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
@@ -24,13 +22,26 @@ import net.the_blue_shark.item.ModItems;
 import net.the_blue_shark.power.custom.BambooSniperPowerType;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 import java.util.function.Predicate;
 
-import static io.github.apace100.apoli.Apoli.server;
-
 public class SniperItem extends BowItem {
+    boolean firsttime = true;
+
     public void sendFailMessage(PlayerEntity playerEntity, String message) {
+        Text text = Text
+                .empty()
+                .append(Text.literal("<").styled(style -> style.withObfuscated(false)))
+                .append(Text.translatable("bamboo_sniper.mr_panda").styled(style -> style.withObfuscated(true).withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.translatable("bamboo_sniper.mr_panda")))))
+                .append(Text.literal("> ").styled(style -> style.withObfuscated(false)))
+                .append(Text.translatable(message));
+
+        if (playerEntity instanceof ServerPlayerEntity serverPlayer) {
+            serverPlayer.sendMessage(text, false);
+        }
+    }
+
+    public void sendPandaFailMessage(PlayerEntity playerEntity, String message) {
         Text text = Text
                 .empty()
                 .append(Text.literal("<").styled(style -> style.withObfuscated(false)))
@@ -76,17 +87,28 @@ public class SniperItem extends BowItem {
                         );
                         playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
                     } else {
-                        int random = ThreadLocalRandom.current().nextInt(0, 10);
+                        Random rand = new Random();
+                        int random = rand.nextInt(4);
                         if (random == 3) {
                             sendFailMessage(playerEntity, "bamboo_sniper.fail.three");
                         }
                         if (random == 2) {
-                            sendFailMessage(playerEntity, "bamboo_sniper.fail.two");
+                            if (firsttime) {
+                                sendFailMessage(playerEntity, "bamboo_sniper.fail.two.one");
+                            } else {
+                                sendFailMessage(playerEntity, "bamboo_sniper.fail.two.two");
+                            }
+                            firsttime = !firsttime;
                         }
                         if (random == 1) {
                             sendFailMessage(playerEntity, "bamboo_sniper.fail.one");
                         }
+                        if (random == 0) {
+                            sendFailMessage(playerEntity, "bamboo_sniper.fail.zero");
+                        }
                     }
+                } else {
+                    sendFailMessage(playerEntity, "bamboo_sniper.fail.one");
                 }
 
             }
@@ -134,4 +156,5 @@ public class SniperItem extends BowItem {
     public boolean isEnchantable(ItemStack stack) {
         return true;
     }
+
 }

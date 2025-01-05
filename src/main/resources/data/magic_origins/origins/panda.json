@@ -4,6 +4,7 @@
     "powers": [
         "magic_origins:panda/bamboo_diet",
         "magic_origins:panda/edible_bamboo",
+        "magic_origins:bamboo_blowpipe",
         "magic_origins:advancement"
     ],
     "icon": {
