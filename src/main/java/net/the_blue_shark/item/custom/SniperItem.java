@@ -4,6 +4,9 @@ import com.mojang.authlib.GameProfile;
 import io.github.apace100.apoli.component.PowerHolderComponent;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.annotation.Nullable;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.PandaEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.BowItem;
@@ -15,6 +18,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.HoverEvent;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 import net.the_blue_shark.entity.projectile.BambooDartEntity;
@@ -155,6 +161,25 @@ public class SniperItem extends BowItem {
     @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
+    }
+    public ActionResult useOnEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) {
+        if (entity instanceof PandaEntity panda) {
+            World world = entity.getWorld();
+            if (!world.isClient) {
+                sendFailMessage(playerEntity, "bamboo_sniper.panda.eat");
+
+                world.playSound(null, panda.getX(), panda.getY(), panda.getZ(),
+                        SoundEvents.ENTITY_PANDA_EAT,
+                        SoundCategory.PLAYERS,
+                        1.0F, 1.0F);
+
+                stack.decrement(1);
+            }
+
+            return ActionResult.SUCCESS;
+        }
+
+        return super.useOnEntity(stack, playerEntity, entity, hand);
     }
 
 }
