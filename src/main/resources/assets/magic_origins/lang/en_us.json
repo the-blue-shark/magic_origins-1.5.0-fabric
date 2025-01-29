@@ -27,6 +27,7 @@
   "bamboo_sniper.fail.one": "You are not blowing hard enough!",
   "bamboo_sniper.fail.two.one": "A bit to the left.",
   "bamboo_sniper.fail.two.two": "A little bit more.",
-  "bamboo_sniper.fail.three": "... even a panda can do better.",
-  "bamboo_sniper.mr_panda": "Panda Sensei"
+  "bamboo_sniper.fail.three": "... even a panda can do better. Maybe you should ask for advice.",
+  "bamboo_sniper.mr_panda": "Panda Sensei",
+  "bamboo_sniper.panda.eat": "It seems like this panda is not smart enough, don't ask advice to this one."
 }
