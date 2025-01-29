@@ -23,11 +23,11 @@ public class MagicOriginsClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.BAMBOO_DART, BambooDartRenderer::new);
 
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.magic_origins.magic_origins_first_keybind", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_ALT,
+                "key.magic_origins.magic_origins_first_keybind", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R,
                 "category.magic_origins.magic_origins_keybinds"
         ));
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.magic_origins.magic_origins_second_keybind", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT,
+                "key.magic_origins.magic_origins_second_keybind", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_G,
                 "category.magic_origins.magic_origins_keybinds"
         ));
     }

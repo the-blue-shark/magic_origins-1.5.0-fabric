@@ -1,6 +1,6 @@
 {
-  "key.magic_origins.magic_origins_first_keybind": "Key bind one",
-  "key.magic_origins.magic_origins_second_keybind": "Key bind two",
+  "key.magic_origins.magic_origins_first_keybind": "Main Keybind",
+  "key.magic_origins.magic_origins_second_keybind": "Side Keybind",
   "category.magic_origins.magic_origins_keybinds": "Magic Origins",
 
   "death.attack.wave": "%1$s was overwhelmed by a wave attack",

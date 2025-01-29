@@ -12,12 +12,11 @@
         "magic_origins:hydra/poison_breath",
         "magic_origins:hydra/wind_wave",
         "magic_origins:hydra/helmet",
-        "magic_origins:advancement"
+        "magic_origins:advancement",
+        "magic_origins:hydra/hydra_heads"
     ],
     "icon": {
-        "item": "minecraft:scute",
-        "amount": 1
+        "id": "minecraft:turtle_scute"
     },
-    "order": 10,
     "impact": 3
 }

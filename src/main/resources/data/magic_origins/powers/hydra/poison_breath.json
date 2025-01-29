@@ -81,7 +81,7 @@
             ]
         },
         "key": {
-            "key": "key.saveToolbarActivator",
+            "key": "key.magic_origins.magic_origins_first_keybind",
             "continuous": true
         }
     },
@@ -211,7 +211,7 @@
             ]
         },
         "key": {
-            "key": "key.loadToolbarActivator",
+            "key": "key.magic_origins.magic_origins_second_keybind",
             "continuous": true
         }
     }
