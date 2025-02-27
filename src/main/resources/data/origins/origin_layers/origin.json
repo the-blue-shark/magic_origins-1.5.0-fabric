@@ -1,7 +1,8 @@
 {
     "origins": [
         "magic_origins:panda",
-        "magic_origins:hydra"
+        "magic_origins:hydra",
+        "magic_origins:pirate"
     ],
     "replace": false,
     "enabled": true,

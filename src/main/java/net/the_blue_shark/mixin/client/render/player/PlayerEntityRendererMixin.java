@@ -37,8 +37,6 @@ public class PlayerEntityRendererMixin {
         // Ensure the player entity is valid and check the power condition
         if (PowerHolderComponent.hasPowerType(player, HydraHeadPowerType.class)) {
             model.head.visible = false;  // Hide the vanilla head
-        } else {
-            model.head.visible = true;  // Restore visibility
         }
     }
     /*

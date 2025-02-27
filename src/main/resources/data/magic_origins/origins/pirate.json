@@ -7,11 +7,11 @@
         "magic_origins:pirate/swim_speed",
         "magic_origins:pirate/home",
         "magic_origins:pirate/shiny",
+        "magic_origins:pirate/parrot_sit_forever",
         "magic_origins:advancement"
     ],
     "icon": {
-        "item": "minecraft:map",
-        "amount": 1
+        "id": "minecraft:map"
     },
     "impact": 1
 }
