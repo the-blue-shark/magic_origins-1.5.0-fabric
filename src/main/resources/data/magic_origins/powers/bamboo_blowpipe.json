@@ -1,5 +1,34 @@
 {
   "name": "Panda Expertise",
   "description": "You have the skill to use a bamboo blowpipe.",
-  "type": "magic_origins:bamboo_sniper"
+  "type": "magic_origins:bamboo_sniper",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "magic_origins:textures/item/bamboo_sniper.png",
+      "recipe": {
+        "id":"magic_origins:bamboo_sniper",
+        "type": "minecraft:crafting_shaped",
+        "category": "equipment",
+        "key": {
+          "A": {
+            "item": "minecraft:spyglass"
+          },
+          "B": {
+            "item": "minecraft:bamboo"
+          }
+        },
+        "pattern": [
+          "  B",
+          "AB ",
+          "B  "
+        ],
+        "result": {
+          "count": 1,
+          "id": "magic_origins:bamboo_sniper"
+        }
+      }
+    }
+  ]
+
 }

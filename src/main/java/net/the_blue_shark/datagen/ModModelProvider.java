@@ -26,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GLAZED_BAMBOO, Models.GENERATED);
         itemModelGenerator.register(ModItems.DART, Models.GENERATED);
         itemModelGenerator.register(ModItems.TIPPED_DART, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BOTTLE_OF_DECAY, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.MAGIC_ORIGINS_ICON, Models.GENERATED);
     }

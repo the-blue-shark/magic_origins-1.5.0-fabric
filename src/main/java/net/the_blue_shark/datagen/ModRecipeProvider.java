@@ -56,10 +56,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO)).offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.BAMBOO_SNIPER)
-                .pattern("A")
-                .pattern("B")
-                .pattern("B")
-                .input('A', Items.AMETHYST_SHARD)
+                .pattern("  B")
+                .pattern("AB ")
+                .pattern("B  ")
+                .input('A', Items.SPYGLASS)
                 .input('B', Items.BAMBOO)
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO)).offerTo(exporter);
 

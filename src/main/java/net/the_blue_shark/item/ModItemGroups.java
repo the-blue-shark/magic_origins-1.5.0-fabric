@@ -31,6 +31,8 @@ public class ModItemGroups {
                         entries.add(ModItems.DART);
                         entries.add(ModItems.TIPPED_DART);
 
+                        entries.add(ModItems.BOTTLE_OF_DECAY);
+
                     }).build());
 
 

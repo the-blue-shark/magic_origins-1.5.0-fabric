@@ -27,6 +27,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         ;
         getOrCreateTagBuilder(ModTags.Items.NEUTRAL_FOOD)
                 .add(Items.OMINOUS_BOTTLE)
+                .add(ModItems.BOTTLE_OF_DECAY)
 
         ;
         getOrCreateTagBuilder(ModTags.Items.BAMBOO_DARTS)

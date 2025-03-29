@@ -40,6 +40,9 @@ public class ModItems {
     public static final Item DART = registerItem("dart",
             new ArrowItem(new Item.Settings()));
 
+    public static final Item BOTTLE_OF_DECAY = registerItem("bottle_of_decay",
+            new PotionItem(new Item.Settings()));
+
 
 
 
@@ -75,5 +78,6 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItems::itemGroupNatural);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::itemGroupFoodAndDrink);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::itemGroupCombat);
+
     }
 }
